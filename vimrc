@@ -37,19 +37,19 @@ endif
 set autoindent
 set ts=4
 set shiftwidth=4
-            set softtabstop=4
-            set tabstop=8
-            set nocp incsearch
-            set cinoptions=:0,p0,t0
-            set cinwords=if,else,while,do,for,switch,case
-            set formatoptions=tcqr
-            set cindent
-            set smarttab
-            set expandtab
-            set ruler
-            set nohlsearch
+set softtabstop=4
+set tabstop=8
+set nocp incsearch
+set cinoptions=:0,p0,t0
+set cinwords=if,else,while,do,for,switch,case
+set formatoptions=tcqr
+set cindent
+set smarttab
+set expandtab
+set ruler
+set nohlsearch
 
-            set number
+set number
 
 syntax enable
 set background=dark
