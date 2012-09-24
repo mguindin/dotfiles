@@ -48,11 +48,11 @@ set number
 
 syntax enable
 set background=dark
+colorscheme solarized
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_constrast="high"
 let g:solarized_visibility="high"
-colorscheme solarized
 "NERDtree enabled by default
 autocmd vimenter * NERDTree
 "NERDtree doesn't prevent closing last file
