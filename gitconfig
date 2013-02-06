@@ -1,0 +1,14 @@
+[user]
+	name = $NAME 
+	email = $EMAIL
+[color]
+	us = always
+	ui = auto
+[colur]
+	ui = always
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    le = log --oneline --decorate
+    dlc = diff --cached HEAD^
+    la = "!git config -l | grep alias | cut -c 7-"

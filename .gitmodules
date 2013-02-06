@@ -1,0 +1,27 @@
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:/mguindin/oh-my-zsh
+[submodule "janus/jedi"]
+	path = janus/jedi
+	url = git://github.com/davidhalter/jedi-vim.git
+[submodule "janus/vim-powerline"]
+	path = janus/vim-powerline
+	url = git@github.com:/Lokaltog/vim-powerline.git
+[submodule "janus/vim-colors-solarized"]
+	path = janus/vim-colors-solarized
+	url = git@github.com:/altercation/vim-colors-solarized.git
+[submodule "janus/jedi-vim"]
+	path = janus/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "solarized/dircolors-solarized"]
+	path = solarized/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "solarized/gnome-terminal-colors-solarized"]
+	path = solarized/gnome-terminal-colors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "solarized/tmux-colors-solarized"]
+	path = solarized/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
