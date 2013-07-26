@@ -11,3 +11,4 @@ ln -s vimrc.after ../.vimrc.after
 ln -s oh-my-zsh ../.oh-my-zsh
 ln -s janus ../.janus
 ln -s zshrc ../.zshrc
+ln -s tmux.conf ../.tmux.conf
