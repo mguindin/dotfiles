@@ -2,3 +2,12 @@ Grand Unified Dotfiles
 
 If you're mguindin then this is what you want.
 If you're not mguindin, then this may still be of interest to you
+
+Basic Usage:
+
+git submodule init && git submodule update to update the submodules
+
+ln -s vimrc.after ../.vimrc.after
+ln -s oh-my-zsh ../.oh-my-zsh
+ln -s janus ../.janus
+ln -s zshrc ../.zshrc
