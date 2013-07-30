@@ -15,4 +15,6 @@ ln -s tmux.conf ~/.tmux.conf
 ln -s gitconfig ~/.gitconfig
 
 I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
-https://gist.github.com/qrush/1595572
+https://github.com/Lokaltog/powerline-fonts
+
+(for newer version of oh-my-zsh, you need v2 of the powerline patched fonts)
