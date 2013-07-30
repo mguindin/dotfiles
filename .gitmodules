@@ -1,12 +1,12 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = git@github.com:/mguindin/oh-my-zsh
+	url = git@github.com:/robbyrussell/oh-my-zsh
 [submodule "janus/jedi"]
 	path = janus/jedi
 	url = git://github.com/davidhalter/jedi-vim.git
 [submodule "janus/vim-airline"]
 	path = janus/vim-airline
-	url = git@github.com:/bling/vim-powerline.git
+	url = git@github.com:/bling/vim-airline.git
 [submodule "janus/vim-colors-solarized"]
 	path = janus/vim-colors-solarized
 	url = git@github.com:/altercation/vim-colors-solarized.git

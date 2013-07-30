@@ -226,5 +226,4 @@ nnoremap L :tabn<CR>
 " Get paste to work how I think it should work
 nnoremap p "0p
 
-" PHP Stuff
-"autocmd FileType php set keywordprg=/Users/matthewguindin/pear/bin/pman
+let g:airline_powerline_fonts = 1
