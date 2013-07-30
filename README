@@ -13,3 +13,6 @@ ln -s janus ~/.janus
 ln -s zshrc ~/.zshrc
 ln -s tmux.conf ~/.tmux.conf
 ln -s gitconfig ~/.gitconfig
+
+I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
+https://gist.github.com/qrush/1595572
