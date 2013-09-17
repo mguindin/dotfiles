@@ -7,9 +7,9 @@ Basic Usage:
 
 git submodule init && git submodule update to update the submodules
 
-ln -s vimrc.after ~/.vimrc.after
+ln -s vimrc ~/.vimrc
 ln -s oh-my-zsh ~/.oh-my-zsh
-ln -s janus ~/.janus
+ln -s vim ~/.vim
 ln -s zshrc ~/.zshrc
 ln -s tmux.conf ~/.tmux.conf
 ln -s gitconfig ~/.gitconfig
