@@ -193,8 +193,6 @@ if has('gui_running')
   set guifont=Inconsolata\ for\ Powerline:h13
   "set background transparency and solarized style 
   set background=dark
-  "autopen NERDTree and focus cursor in new document
-  autocmd VimEnter * NERDTree
   autocmd vimenter * wincmd p
 else
   set background=dark
