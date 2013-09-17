@@ -1,4 +1,20 @@
 Grand Unified Dotfiles
 
-If you're @mguindin then this is what you want.
-If you're not @mguindin, then this may still be of interest to you
+If you're mguindin then this is what you want.
+If you're not mguindin, then this may still be of interest to you
+
+Basic Usage:
+
+git submodule init && git submodule update to update the submodules
+
+ln -s vimrc.after ~/.vimrc.after
+ln -s oh-my-zsh ~/.oh-my-zsh
+ln -s janus ~/.janus
+ln -s zshrc ~/.zshrc
+ln -s tmux.conf ~/.tmux.conf
+ln -s gitconfig ~/.gitconfig
+
+I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
+https://github.com/Lokaltog/powerline-fonts
+
+(for newer version of oh-my-zsh, you need v2 of the powerline patched fonts)
