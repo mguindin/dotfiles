@@ -1,8 +1,4 @@
-color solarized
-set background=dark
-
-set guifont=Monaco\ Regular\ for\ Powerline:h14
-
+execute pathogen#infect()
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 ""Enable filetypes
@@ -50,7 +46,7 @@ set laststatus=2
 ""Prefer a slightly higher line height
 set linespace=3
 
-"Better line wrapping 
+"Better line wrapping
 set wrap
 set textwidth=79
 set formatoptions=qrn1
@@ -123,12 +119,12 @@ imap ,<tab> <C-x><C-o>
 " " set wildmode=list:longest
 "
 "http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-" set completeopt=longest,menuone
-" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 "Map escape key to jj -- much faster
 imap jj <esc>
@@ -167,6 +163,10 @@ nmap ,nt :NERDTreeToggle
 let NERDTreeShowHidden=1
 
 
+"Helpeful abbreviations
+iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
 "Spelling corrects. Just for example. Add yours below.
 iab teh the
 iab Teh The
@@ -190,7 +190,7 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 if has('gui_running')
   "Using a cool patched font for powerline
-  set guifont=Monaco\ Regular\ for\ Powerline:h14
+  set guifont=Inconsolata\ for\ Powerline:h13
   "set background transparency and solarized style 
   set background=dark
   "autopen NERDTree and focus cursor in new document
@@ -220,6 +220,8 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" PHP stuff
+autocmd FileType php set keywordprg=/Users/matt/pear/bin/pman
 nnoremap H :tabp<CR>
 nnoremap L :tabn<CR>
 
