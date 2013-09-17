@@ -8,10 +8,15 @@ Basic Usage:
 git submodule init && git submodule update to update the submodules
 
 ln -s vimrc ~/.vimrc
+
 ln -s oh-my-zsh ~/.oh-my-zsh
+
 ln -s vim ~/.vim
+
 ln -s zshrc ~/.zshrc
+
 ln -s tmux.conf ~/.tmux.conf
+
 ln -s gitconfig ~/.gitconfig
 
 I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
