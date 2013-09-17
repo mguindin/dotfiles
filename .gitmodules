@@ -1,18 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:/robbyrussell/oh-my-zsh
-[submodule "janus/jedi"]
-	path = janus/jedi
-	url = git://github.com/davidhalter/jedi-vim.git
-[submodule "janus/vim-airline"]
-	path = janus/vim-airline
-	url = git@github.com:/bling/vim-airline.git
-[submodule "janus/vim-colors-solarized"]
-	path = janus/vim-colors-solarized
-	url = git@github.com:/altercation/vim-colors-solarized.git
-[submodule "janus/jedi-vim"]
-	path = janus/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "solarized/dircolors-solarized"]
 	path = solarized/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
@@ -25,3 +13,18 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/YouCompleteMe"]
+    path = vim/bundle/YouCompleteMe
+    url = git://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/ctrl.p"]
+    path = vim/bundle/ctrlp.vim
+    url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-airline"]
+    path = vim/bundle/vim-airline
+    url = git://github.com/bling/vim-airline.git
+[submodule "vim/bundle/vim-colors-solarized"]
+    path = vim/bundle/vim-colors-solarized
+    url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/vim-polyglot"]
+    path = vim/bundle/vim-polyglot
+    url = git://github.com/sheerun/vim-polyglot.git
