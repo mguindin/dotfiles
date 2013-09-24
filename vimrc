@@ -1,9 +1,13 @@
-execute pathogen#infect()
-"Forget compatibility with Vi. Who cares.
+call pathogen#infect()
+Helptags
+
+"CtrlP plugins
+let g:ctrlp_extensions=['tag']
 set nocompatible
 ""Enable filetypes
 filetype on
 filetype plugin on
+filetype plugin indent on
 filetype indent on
 syntax on
 "To swtich between solarized dark and solarized light
@@ -227,3 +231,4 @@ nnoremap L :tabn<CR>
 nnoremap p "0p
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
