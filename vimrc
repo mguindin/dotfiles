@@ -37,7 +37,8 @@ set expandtab
 ""Show command in bottom right portion of the screen
 set showcmd
 
-"Show lines numbers
+"Show lines numbers (hybrid for >= 7.4)
+set relativenumber
 set number
 
 "Indent stuff
