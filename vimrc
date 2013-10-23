@@ -37,10 +37,6 @@ set expandtab
 ""Show command in bottom right portion of the screen
 set showcmd
 
-"Show lines numbers (hybrid for >= 7.4)
-set relativenumber
-set number
-
 "Indent stuff
 set smartindent
 set autoindent
@@ -158,16 +154,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-"------------------------"
-"NERDTREE PLUGIN SETTINGS
-"------------------------"
-"Shortcut for NERDTreeToggle
-nmap ,nt :NERDTreeToggle
-
-"Show hidden files in NerdTree
-let NERDTreeShowHidden=1
-
-
 "Helpeful abbreviations
 iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -199,7 +185,11 @@ if has('gui_running')
   "set background transparency and solarized style 
   set background=dark
   autocmd vimenter * wincmd p
+  "Show lines numbers (hybrid for >= 7.4)
+  set relativenumber
+  set number
 else
+  set number
   set background=dark
   set mouse=a
 endif
