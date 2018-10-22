@@ -54,3 +54,18 @@ This is a dockerfile for a bastion or jumpbox
 ```sh
 docker build -t mguindin/jump -f Dockerfile.jump .
 ```
+
+## Python
+Install pyenv
+```sh
+brew install pyenv
+```
+
+Install requirements
+```sh
+pip install -r ./requirements.txt
+```
+
+## Vim / Neovim
+
+I prefer neovim, but the configurations for vim here also work in Vim8
