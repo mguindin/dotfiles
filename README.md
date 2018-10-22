@@ -1,25 +1,28 @@
-Grand Unified Dotfiles
-
-If you're mguindin then this is what you want.
-If you're not mguindin, then this may still be of interest to you
+# Grand Unified Dotfiles
 
 Basic Usage:
 
-git submodule init && git submodule update to update the submodules
+git submodule update --init
 
-ln -s vimrc ~/.vimrc
+Uses stow and powerline fonts.
 
-ln -s oh-my-zsh ~/.oh-my-zsh
+For fish, install [fish-shell](http://fishshell.com/) and
+[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
-ln -s vim ~/.vim
+```sh
+stow vim
+stow nvim
+stow omf
+```
 
-ln -s zshrc ~/.zshrc
+# Brew
 
-ln -s tmux.conf ~/.tmux.conf
+Install [brew](https://brew.sh/) and then install bundle
+```sh
+brew tap Homebrew/bundle
+```
 
-ln -s gitconfig ~/.gitconfig
-
-I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
-https://github.com/Lokaltog/powerline-fonts
-
-(for newer version of oh-my-zsh, you need v2 of the powerline patched fonts)
+Then install from the Brewfile:
+```sh
+brew bundle
+```
