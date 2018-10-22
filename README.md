@@ -55,6 +55,10 @@ This is a dockerfile for a bastion or jumpbox
 docker build -t mguindin/jump -f Dockerfile.jump .
 ```
 
+## Fonts
+I like [Fira Code](https://github.com/tonsky/FiraCode) and you'll see it
+referenced in a few dotfiles (ligatures are pretty great).
+
 ## Python
 Install pyenv
 ```sh
