@@ -41,7 +41,7 @@ zsh/other_aliases/*
 .netrwhist
 fish_history
 vim/.vim/plugged
-vim/.vim/autoload/gocomplete.vim
+vim/.vim/autoload/*
 vim/.vim/ftplugin/go/gocomplete.vim
 omf/.config/fish
 certs/
