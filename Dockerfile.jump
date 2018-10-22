@@ -1,0 +1,15 @@
+FROM sickp/alpine-sshd:latest
+
+LABEL maintainer="Matt Guindin <m@guind.in>"
+LABEL updated_at=2017-12-08
+
+COPY ./ssh/.ssh/authorized_keys /home/matt/.ssh/authorized_keys
+RUN \
+  passwd -d root && \
+  adduser -D -s /bin/ash matt && \
+  passwd -u matt && \
+  chown -R matt:matt /home/matt && \
+  chown -R matt:matt /home/matt/.ssh/authorized_keys && \
+  chmod 600 /home/matt/.ssh/authorized_keys && \
+  ssh-keygen -A
+

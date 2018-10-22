@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Base16 Dark Eighties",
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "editor.fontFamily": "Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "python.pythonPath": "/usr/local/bin/python3",
+    "telemetry.enableTelemetry": false,
+    "files.autoGuessEncoding": true,
+    "files.useExperimentalFileWatcher": true
+}

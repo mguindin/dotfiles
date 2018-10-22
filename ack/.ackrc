@@ -1,0 +1,15 @@
+--type-add=ruby=.rake,.builder
+--type-set=ignorables=.log,.tmp,.pdf
+--ignore-dir=cache
+--ignore-dir=log
+--ignore-dir=node_modules
+--ignore-dir=tmp
+--ignore-dir=vendor
+--type-add=xml=.xqy
+--type-add=html=.haml
+--type-add=html=.handlebars
+--type-add=html=.hbs
+--type-add=html=.jst
+--type-set=coffee=.coffee
+--type-add=css=.scss
+--type-set=less=.less

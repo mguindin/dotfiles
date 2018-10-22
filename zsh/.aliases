@@ -1,0 +1,28 @@
+# Aliases file
+
+# Source the other alias files (put in other_aliases directory within dotfiles)
+# for file in $HOME/dotfiles/other_aliases/*; do
+#    source "$file"
+#done
+
+# Handy Aliases
+
+# Handy Aliases
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+# Linux (nas)
+fi
+
+#tmux
+alias tl="tmux ls"
+alias ta="tmux attach -t "
+alias tn="tmux new -s "
+
+# linux/zsh/etc
+alias s="git status"
+alias szsh='source ~/.zshrc'
+alias vzsh='vim  ~/.zshrc'
+alias czsh='cat ~/.zshrc'
+alias vba='vim ~/dotfiles/zsh/.aliases'
+alias push='git push origin $@'
+alias pull='git pull origin $@'
+alias gosrc='cd ~/go/src/github.com/'

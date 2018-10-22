@@ -1,25 +1,75 @@
-Grand Unified Dotfiles
+# Grand Unified Dotfiles
 
-If you're mguindin then this is what you want.
-If you're not mguindin, then this may still be of interest to you
 
-Basic Usage:
+Uses stow and powerline fonts.
 
-git submodule init && git submodule update to update the submodules
+For fish, install [fish-shell](http://fishshell.com/) and
+[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 
-ln -s vimrc ~/.vimrc
 
-ln -s oh-my-zsh ~/.oh-my-zsh
+# Installation
+## Submodule
 
-ln -s vim ~/.vim
+```sh
+git submodule update --init
+```
 
-ln -s zshrc ~/.zshrc
+## Homebrew (brew) (on macOS)
 
-ln -s tmux.conf ~/.tmux.conf
+Install [brew](https://brew.sh/) and then install bundle
+```sh
+brew tap Homebrew/bundle
+```
 
-ln -s gitconfig ~/.gitconfig
+Then install from the Brewfile:
+```sh
+brew bundle
+```
 
-I use solarized dark for my theme and Inconsolata with Powerline fonts (at 12pt font):
-https://github.com/Lokaltog/powerline-fonts
+## Stow
+All of my dotfiles are in a format that can be symlinked to the correct place
+using [stow](https://www.gnu.org/software/stow/)
+For example:
 
-(for newer version of oh-my-zsh, you need v2 of the powerline patched fonts)
+```sh
+stow vim
+stow nvim
+stow omf
+...
+```
+
+## Docker
+I've also included Dockerfiles for build this repo into a usable developer
+container (for both ubuntu and alpine)
+
+### Developer
+
+```sh
+docker build -t mguindin/dev -f Dockerfile.alpine .
+```
+
+### Jumpbox
+This is a dockerfile for a bastion or jumpbox
+
+```sh
+docker build -t mguindin/jump -f Dockerfile.jump .
+```
+
+## Fonts
+I like [Fira Code](https://github.com/tonsky/FiraCode) and you'll see it
+referenced in a few dotfiles (ligatures are pretty great).
+
+## Python
+Install pyenv
+```sh
+brew install pyenv
+```
+
+Install requirements
+```sh
+pip install -r ./requirements.txt
+```
+
+## Vim / Neovim
+
+I prefer neovim, but the configurations for vim here also work in Vim8
