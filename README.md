@@ -1,6 +1,5 @@
 # Grand Unified Dotfiles
 
-
 Uses stow and powerline fonts.
 
 For fish, install [fish-shell](http://fishshell.com/) and
@@ -8,6 +7,16 @@ For fish, install [fish-shell](http://fishshell.com/) and
 
 
 # Installation
+# Makefile (automatic)
+The Makefile in this repo will install and configure everything automatically
+
+```sh
+make
+```
+
+## Manual
+On the other hand, if you want to do the installation manually:
+
 ## Submodule
 
 ```sh
@@ -29,13 +38,21 @@ brew bundle
 ## Stow
 All of my dotfiles are in a format that can be symlinked to the correct place
 using [stow](https://www.gnu.org/software/stow/)
-For example:
+For example (assuming you clone this repo into your home directory):
 
 ```sh
 stow vim
 stow nvim
 stow omf
 ...
+```
+
+This will create symlinks to the correct locations (e.g.: ~/.vimrc,
+~/.config/...)
+
+This can also be accomplished with the Makefile:
+```sh
+make link
 ```
 
 ## Docker
@@ -73,3 +90,9 @@ pip install -r ./requirements.txt
 ## Vim / Neovim
 
 I prefer neovim, but the configurations for vim here also work in Vim8
+
+# Uninstall
+You just need to unlink the stowed filed, using `stow -D` or the Makefile:
+```sh
+make unlink
+```
