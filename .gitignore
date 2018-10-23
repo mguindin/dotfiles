@@ -48,3 +48,9 @@ certs/
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/autoload/
 plug.vim.old
+
+# GPG #
+#######
+*.key
+*.gpg
+*.kbx
