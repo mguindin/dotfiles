@@ -16,14 +16,6 @@ set t_ut=
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-" Remap increment and decrement numbers to something that works on macs/linux
-nnoremap <A-a> <C-a>
-nnoremap <A-x> <C-x>
-
-" tabs
-nnoremap <Leader>] :tabn<cr>
-nnoremap <Leader>[ :tabp<cr>
-nnoremap <Leader>T :tabe<cr>
 
 " Let's not write swap, etc
 set nobackup
@@ -42,19 +34,6 @@ end
 set ttyfast " u got a fast terminal
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
-" Remap increment as C-g (C-a is used by tmux)
-nnoremap <C-g> <C-a>
-
-nnoremap j gj
-nnoremap k gk
-
-" Windows and Splits
-" easier split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 "Split windows below the current window.
 set splitbelow
 set splitright
@@ -66,9 +45,6 @@ set autoread
 set autowrite
 
 set lazyredraw " redraw only what we need to
-
-" sudo write
-cmap w!! w !sudo tee > /dev/null %
 
 ""Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
@@ -90,11 +66,7 @@ set expandtab " tabs are spaces
 filetype indent on " load filetype-specific indent files
 
 " Enable completion window
-
 set completeopt+=preview
-
-nnoremap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
-
 
 ""Show command in bottom right portion of the screen
 set showcmd
@@ -121,15 +93,6 @@ set foldenable
 "
 ""Hide mouse when typing
 set mousehide
-
-"Map escape key to jj -- much faster
-imap jj <esc>
-
-" easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 
 "Spelling corrects. Just for example. Add yours below.
 iab teh the

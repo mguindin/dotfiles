@@ -149,7 +149,6 @@ let g:completor_clang_binary='/usr/bin/clang'
 " Go
 let g:completor_gocode_binary=$GOPATH.'/bin/gocode' 
 
-le
 " Use TAB to complete when typing words, else inserts TABs as usual.  Uses
 " dictionary, source files, and completor to find matching words to complete.
 
@@ -199,6 +198,7 @@ let b:ale_fixers = [
 nnoremap <Leader>rj :ALEGoToDefinition<CR>
 nnoremap <Leader>rf :ALEFindReferences<CR>
 nnoremap <Leader>rh :ALEHover<CR>
+nnoremap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'

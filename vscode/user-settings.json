@@ -1,9 +1,106 @@
 {
-    "workbench.colorTheme": "Base16 Dark Eighties",
     "terminal.integrated.drawBoldTextInBrightColors": false,
-    "editor.fontFamily": "Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
-    "python.pythonPath": "/usr/local/bin/python3",
+    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "python.pythonPath": "~/.pyenv/shims/python3",
     "telemetry.enableTelemetry": false,
     "files.autoGuessEncoding": true,
-    "files.useExperimentalFileWatcher": true
+    "files.useExperimentalFileWatcher": true,
+    "workbench.colorTheme": "Base16 Dark Eighties",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "600",
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["<Leader>", "w"],
+            "commands": [":w"]
+        },
+        {
+            "before": ["<Leader>", "w", "q"],
+            "commands": [":wq"]
+        },
+        {
+            "before": ["<Leader>", "q"],
+            "commands": [":q"]
+        },
+        {
+            "before": ["<Leader>", "v"],
+            "after": ["<C-w>", "v", "<C-w>", "l"]
+        },
+        {
+            "before": ["<Leader>", "s"],
+            "after": ["<C-w>", "s", "<C-w>", "j"]
+        },
+        {
+            "before": ["<Leader>", "bn"],
+            "commands": [":bnext<CR>"]
+        },
+        {
+            "before": ["<Leader>", "bp"],
+            "commands": [":bprevious<CR>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<C-J>"],
+            "after": ["<C-W>", "<C-H>"]
+        },
+        {
+            "before": ["<C-K>"],
+            "after": ["<C-W>", "<C-K>"]
+        },
+        {
+            "before": ["<C-L>"],
+            "after": ["<C-W>", "<C-L>"]
+        },
+        {
+            "before": ["<C-H>"],
+            "after": ["<C-W>", "<C-H>"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    }
 }

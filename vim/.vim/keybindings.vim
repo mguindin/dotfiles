@@ -32,3 +32,37 @@ noremap <Leader>yy "+yy
 " Space p
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <Leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Remap increment and decrement numbers to something that works on macs/linux
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
+
+" tabs
+nnoremap <Leader>] :tabn<cr>
+nnoremap <Leader>[ :tabp<cr>
+nnoremap <Leader>T :tabe<cr>
+
+" Windows and Splits
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Better up/down line movement
+nnoremap j gj
+nnoremap k gk
+
+" Remap increment as C-g (C-a is used by tmux)
+nnoremap <C-g> <C-a>
+
+"Map escape key to jj -- much faster
+imap jj <esc>
+
+" sudo write
+cmap w!! w !sudo tee > /dev/null %
