@@ -70,4 +70,8 @@ augroup configgroup
   " have vim jump to last location in a file on default
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
+
+  " ignore the previous autocmd when it's the git commit msg
+  autocmd BufReadPost COMMIT_EDITMSG
+    \ exe "normal! ggI"
 augroup END
