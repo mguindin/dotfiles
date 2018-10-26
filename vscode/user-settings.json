@@ -14,6 +14,7 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+    "vim.enableNeovim": true,
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
@@ -66,6 +67,10 @@
             "commands": [":bprevious<CR>"]
         },
         {
+            "before": ["<Leader>", "p"],
+            "after": ["p"]
+        },
+        {
             "before": ["<C-h>"],
             "after": ["<C-w>", "h"]
         },
@@ -96,6 +101,33 @@
         {
             "before": ["<C-H>"],
             "after": ["<C-W>", "<C-H>"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [ "p" ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y"
+            ]
         }
     ],
     "vim.leader": "<space>",
