@@ -54,3 +54,4 @@ plug.vim.old
 *.key
 *.gpg
 *.kbx
+sbt/project/target

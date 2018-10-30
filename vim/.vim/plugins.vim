@@ -30,6 +30,11 @@ Plug 'maralla/completor.vim'
 
 "-------------------=== Scala ===--------------------------
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+if has('nvim')
+  Plug 'ensime/ensime-vim', { 'for': 'scala', 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'ensime/ensime-vim', { 'for': 'scala'}
+endif
 
 "-------------------=== Rust ===---------------------------
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }

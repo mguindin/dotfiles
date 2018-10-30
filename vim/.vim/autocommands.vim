@@ -38,6 +38,9 @@ augroup configgroup
   autocmd BufNewFile,BufRead *.q set filetype=hive expandtab
   autocmd BufReadPost *.rs setlocal filetype=rust
 
+  " Scala
+  autocmd BufWritePost *.scala silent :EnTypeCheck
+
   " Stuff for Go
   autocmd FileType go nmap <leader>r <Plug>(go-run)
   autocmd FileType go nmap <leader>b <Plug>(go-build)

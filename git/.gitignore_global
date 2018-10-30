@@ -67,6 +67,9 @@ Session.vim
 .venv
 .python-version
 
+# scala
+ensime.sbt
+
 # Development #
 .netrc
 
