@@ -1,13 +1,36 @@
-# editorconfig.org
+# Configuration file for EditorConfig
+# More information is available under http://EditorConfig.org
+
+# Ignore any other files further up in the file system
 root = true
 
+# Configuration for all files
 [*]
+# Let's always use utf-8
 charset = utf-8
+# Enforce Unix style line endings (\n only)
 end_of_line = lf
-indent_size = 4
+# Generally let's use 2 characters for indentation
+indent_size = 2
+# Force space characters for indentation (spaces > tabs)
 indent_style = space
+# Always end files with a blank line
 insert_final_newline = true
+# Remove whitespace characters at the end of line
 trim_trailing_whitespace = true
 
-[*.yml]
-indent_size = 2
+[*.java]
+# Java is 4 characters for indentation
+indent_size = 4
+
+[Makefile]
+# Makefiles need tab indentation
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
+
+# Minified JavaScript files shouldn't be changed
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
