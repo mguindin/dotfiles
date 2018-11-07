@@ -54,3 +54,5 @@ plug.vim.old
 *.key
 *.gpg
 *.kbx
+gnupg/.gnupg/crls.d/
+gnupg/.gnupg/random_seed
