@@ -87,6 +87,12 @@ Install requirements
 pip install -r ./requirements.txt
 ```
 
+## Nix
+To install nix-env for macOS shell:
+```sh
+./nix/nix-fishgen.py
+```
+
 ## Vim / Neovim
 
 I prefer neovim, but the configurations for vim here also work in Vim8

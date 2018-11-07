@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 .PHONY : link unlink install fish
 
-all: install fish link
+all: install fish link nix
 
 install:
 	git submodule update --init;\
@@ -21,3 +21,6 @@ unlink:
 
 fish:
 	curl -L https://get.oh-my.fish | fish
+
+nix:
+	./nix/nix-fishgen.py
