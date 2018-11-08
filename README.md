@@ -96,3 +96,14 @@ You just need to unlink the stowed filed, using `stow -D` or the Makefile:
 ```sh
 make unlink
 ```
+
+## Colors
+
+If using alacritty + tmux + fish, then just change the color in fish:
+```sh
+~/.config/omf/init.fish
+```
+and vim at
+```sh
+~/.vim/general.vim
+```
