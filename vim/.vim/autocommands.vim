@@ -61,10 +61,10 @@ augroup configgroup
   " ALE linting events
   set updatetime=1000
   let g:ale_lint_on_text_changed = 0
-  autocmd CursorHold * call ale#Lint()
-  autocmd CursorHoldI * call ale#Lint()
-  autocmd InsertEnter * call ale#Lint()
-  autocmd InsertLeave * call ale#Lint()
+  autocmd CursorHold * call ale#Queue(0)
+  autocmd CursorHoldI * call ale#Queue(0)
+  autocmd InsertEnter * call ale#Queue(0)
+  autocmd InsertLeave * call ale#Queue(0)
   autocmd FileType gitcommit let g:ale_sign_column_always = 1
 
   " have vim jump to last location in a file on default
