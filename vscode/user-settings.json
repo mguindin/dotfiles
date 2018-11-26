@@ -1,13 +1,15 @@
 {
-    "terminal.integrated.drawBoldTextInBrightColors": false,
-    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
-    "python.pythonPath": "~/.pyenv/shims/python3",
-    "telemetry.enableTelemetry": false,
-    "files.autoGuessEncoding": true,
-    "files.useExperimentalFileWatcher": true,
-    "workbench.colorTheme": "Base16 Dark Eighties",
+    //workbench
+    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.editor.highlightModifiedTabs": true,
+
+    //editor
     "editor.fontLigatures": true,
     "editor.fontWeight": "600",
+    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "editor.renderWhitespace": "boundary",
+
+    //vim
     "vim.easymotion": true,
     "vim.sneak": true,
     "vim.incsearch": true,
@@ -121,7 +123,9 @@
             ]
         },
         {
-            "before": [ "p" ],
+            "before": [
+                "p"
+            ],
             "after": [
                 "p",
                 "g",
@@ -134,5 +138,17 @@
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
-    }
+    },
+    // search
+    "search.usePCRE2": true,
+
+    //terminal
+    "terminal.integrated.experimentalBufferImpl": "TypedArray",
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+
+    //misc
+    "python.pythonPath": "~/.pyenv/shims/python3",
+    "telemetry.enableTelemetry": false,
+    "files.autoGuessEncoding": true,
+    "files.useExperimentalFileWatcher": true,
 }
