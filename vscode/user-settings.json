@@ -1,11 +1,16 @@
 {
+    "window.openFoldersInNewWindow": "on",
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
     "python.pythonPath": "~/.pyenv/shims/python3",
     "telemetry.enableTelemetry": false,
     "files.autoGuessEncoding": true,
     "files.useExperimentalFileWatcher": true,
-    "workbench.colorTheme": "Base16 Dark Eighties",
+    "workbench.colorTheme": "Base16 Dark Monokai",
+    "files.insertFinalNewline": true,
+    "workbench.editor.enablePreview": false,
+    "window.nativeFullScreen": false,
     "editor.fontLigatures": true,
     "editor.fontWeight": "600",
     "vim.easymotion": true,
@@ -134,5 +139,8 @@
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
-    }
+    },
+    "window.zoomLevel": 0,
+    "terminal.integrated.macOptionIsMeta": true,
+    "terminal.integrated.copyOnSelection": true
 }

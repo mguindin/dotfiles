@@ -28,7 +28,23 @@ set -x PYENV_ROOT $HOME/.pyenv
 set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
 
 # set up PATH
-set -xg PATH $HOME/go/bin $HOME/.cargo/bin $PYENV_ROOT/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /bin $PATH
+# Add Go binaries, if available
+if command -sq go
+  set -xg PATH $HOME/go/bin $PATH
+end
+
+# Add rust binaries, if available
+if command -sq rustc
+  set -xg PATH $HOME/.cargo/bin $PATH
+end
+
+# Add pyenv, if available
+if command -sq pyenv
+  set -xg PATH $PYENV_ROOT/bin $PATH
+end
+
+# Add normal binary paths
+set -xg PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /bin $PATH
 
 switch (uname -a)
   case '*amazon*'
@@ -58,5 +74,11 @@ set -g theme_nerd_fonts no
 set -g theme_show_exit_status yes
 set -g theme_newline_cursor no
 
-# start pyenv
-status --is-interactive; and source (pyenv init -|psub)
+if command -sq kitty
+  kitty + complete setup fish | source
+end
+
+if command -sq pyenv
+  # start pyenv
+  status --is-interactive; and source (pyenv init -|psub)
+end
