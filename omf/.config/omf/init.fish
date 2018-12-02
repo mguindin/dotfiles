@@ -28,6 +28,9 @@ set -x PYENV_ROOT $HOME/.pyenv
 set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
 
 # set up PATH
+# Add normal binary paths
+set -xg PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /bin $PATH
+
 # Add Go binaries, if available
 if command -sq go
   set -xg PATH $HOME/go/bin $PATH
@@ -42,9 +45,6 @@ end
 if command -sq pyenv
   set -xg PATH $PYENV_ROOT/bin $PATH
 end
-
-# Add normal binary paths
-set -xg PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /bin $PATH
 
 switch (uname -a)
   case '*amazon*'
