@@ -1,18 +1,15 @@
 {
-    "window.openFoldersInNewWindow": "on",
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "terminal.integrated.drawBoldTextInBrightColors": false,
-    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
-    "python.pythonPath": "~/.pyenv/shims/python3",
-    "telemetry.enableTelemetry": false,
-    "files.autoGuessEncoding": true,
-    "files.useExperimentalFileWatcher": true,
-    "workbench.colorTheme": "Base16 Dark Monokai",
-    "files.insertFinalNewline": true,
-    "workbench.editor.enablePreview": false,
-    "window.nativeFullScreen": false,
+    //workbench
+    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.editor.highlightModifiedTabs": true,
+
+    //editor
     "editor.fontLigatures": true,
     "editor.fontWeight": "600",
+    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "editor.renderWhitespace": "boundary",
+
+    //vim
     "vim.easymotion": true,
     "vim.sneak": true,
     "vim.incsearch": true,
@@ -126,7 +123,9 @@
             ]
         },
         {
-            "before": [ "p" ],
+            "before": [
+                "p"
+            ],
             "after": [
                 "p",
                 "g",
@@ -140,7 +139,16 @@
         "<C-a>": false,
         "<C-f>": false
     },
-    "window.zoomLevel": 0,
-    "terminal.integrated.macOptionIsMeta": true,
-    "terminal.integrated.copyOnSelection": true
+    // search
+    "search.usePCRE2": true,
+
+    //terminal
+    "terminal.integrated.experimentalBufferImpl": "TypedArray",
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+
+    //misc
+    "python.pythonPath": "~/.pyenv/shims/python3",
+    "telemetry.enableTelemetry": false,
+    "files.autoGuessEncoding": true,
+    "files.useExperimentalFileWatcher": true,
 }
