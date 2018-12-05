@@ -71,7 +71,6 @@ scrolling:
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
->>>>>>> cca1745c43c0d325e148b448ba53c34e7c25fc0e
 
 # Spaces per Tab (changes require restart)
 #
@@ -80,7 +79,7 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-tabspaces: 8
+tabspaces: 4
 
 # Font configuration (changes require restart)
 font:
@@ -98,12 +97,12 @@ font:
 
   # The italic font face
   italic:
-    family: Menlo
+    family: Fira Code
     # Style can be specified to pick a specific face.
     #style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -261,7 +260,7 @@ mouse:
   triple_click: { threshold: 300 }
   #
   # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: false
+  hide_when_typing: true
 
   url:
     # URL launcher
