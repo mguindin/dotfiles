@@ -37,7 +37,8 @@ if command -sq go
 end
 
 # Add rust binaries, if available
-if command -sq rustc
+if eval $HOME/.cargo
+  source $HOME/.cargo/env
   set -xg PATH $HOME/.cargo/bin $PATH
 end
 
