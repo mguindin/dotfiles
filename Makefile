@@ -4,10 +4,7 @@
 all: install fish link
 
 install:
-	git submodule update --init;\
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
-	brew tap Homebrew/bundle; \
-	brew bundle
+	git submodule update --init; /bin/bash ./install.sh
 
 link:
 	for d in */; do \
@@ -20,4 +17,9 @@ unlink:
 	done
 
 fish:
-	curl -L https://get.oh-my.fish | fish
+	if ! type "fish" &> /dev/null; then \
+		echo "installing fish"; \
+		curl -L https://get.oh-my.fish | fish; \
+	else \
+		echo "fish already installed; continuing"; \
+	fi
