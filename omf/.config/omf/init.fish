@@ -42,6 +42,10 @@ if test -d $HOME/.cargo
   set -xg PATH $HOME/.cargo/bin $PATH
 end
 
+if test -d $HOME/.local/bin
+  set -xg PATH $HOME/.local/bin $PATH
+end
+
 # Add pyenv, if available
 if command -sq pyenv
   set -xg PATH $PYENV_ROOT/bin $PATH
