@@ -46,6 +46,11 @@ if test -d $HOME/.local/bin
   set -xg PATH $HOME/.local/bin $PATH
 end
 
+# asdf
+if test -d $HOME/.asdf
+  source ~/.asdf/asdf.fish
+end
+
 # Add pyenv, if available
 if command -sq pyenv
   set -xg PATH $PYENV_ROOT/bin $PATH

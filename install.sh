@@ -7,7 +7,10 @@ case "${unameOut}" in
     Linux*)
       echo "linux, nothing to do here"
       # Should be debian-based
-      apt-get install stow fish git
+      sudo apt-get update && sudo apt-get install stow \
+        fish git automake autoconf libreadline-dev \
+        libncurses-dev libssl-dev libyaml-dev \
+        libxslt-dev libffi-dev libtool unixodbc-dev
       ;;
     Darwin*)\
       echo "macOS, brewing"
