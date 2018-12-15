@@ -4,7 +4,7 @@
 all: install fish link
 
 install:
-	git submodule update --init; /bin/bash ./install.sh
+	./install.sh; git submodule update --init
 
 link:
 	for d in */; do \

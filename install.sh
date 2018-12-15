@@ -6,6 +6,8 @@ unameOut="$(uname -s)";
 case "${unameOut}" in
     Linux*)
       echo "linux, nothing to do here"
+      # Should be debian-based
+      apt-get install stow fish git
       ;;
     Darwin*)\
       echo "macOS, brewing"

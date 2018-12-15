@@ -1,4 +1,3 @@
-package asdf
 package aws
 package bang-bang
 package config
