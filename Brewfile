@@ -29,5 +29,3 @@ brew "tmux"
 brew "vim", args: ["with-lua", "with-override-system-vi"]
 brew "watch"
 brew "burntsushi/ripgrep/ripgrep-bin"
-cask "keybase"
-cask "signal"
