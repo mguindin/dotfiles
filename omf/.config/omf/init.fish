@@ -10,6 +10,8 @@ switch (uname -a)
   case '*Darwin*'
     set -xg GREP_OPTIONS '--color=auto'
     set -xg GREP_COLOR '3;33'
+    # add pyspark
+    set -xg SPARK_HOME /usr/local/Cellar/apache-spark/2.4.0/libexec
 end
 
 set -xg GOPATH $HOME/go
@@ -22,10 +24,6 @@ set -xg LANG en_US.UTF-8
 set -xg LC_CTYPE "en_US.UTF-8"
 set -xg LC_MESSAGES "en_US.UTF-8"
 set -xg LC_COLLATE C
-
-# pyenv
-set -x PYENV_ROOT $HOME/.pyenv
-set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
 
 # set up PATH
 # Add normal binary paths
@@ -51,10 +49,18 @@ if test -d $HOME/.asdf
   source ~/.asdf/asdf.fish
 end
 
+if test -d $SPARK_HOME
+  set -xg PYTHONPATH $SPARK_HOME/python/lib/py4j-0.10.4-src.zip $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
+end
+
 # Add pyenv, if available
 if command -sq pyenv
+  set -x PYENV_ROOT $HOME/.pyenv
+  set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
   set -xg PATH $PYENV_ROOT/bin $PATH
+  status --is-interactive; and source (pyenv init -|psub); and source (pyenv virtualenv-init -|psub)
 end
+
 
 switch (uname -a)
   case '*amazon*'
@@ -88,7 +94,3 @@ if command -sq kitty
   kitty + complete setup fish | source
 end
 
-if command -sq pyenv
-  # start pyenv
-  status --is-interactive; and source (pyenv init -|psub)
-end
