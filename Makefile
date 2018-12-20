@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 .PHONY : link unlink install fish
 
-all: install asdf fish link
+all: install asdf link
 
 install:
 	./install.sh; git submodule update --init
@@ -24,10 +24,3 @@ unlink:
 		stow -D $$d ; \
 	done
 
-fish:
-	if ! type "fish" &> /dev/null; then \
-		echo "installing fish"; \
-		curl -L https://get.oh-my.fish | fish; \
-	else \
-		echo "fish already installed; continuing"; \
-	fi
