@@ -2,9 +2,7 @@
 
 Uses stow and powerline fonts.
 
-For fish, install [fish-shell](http://fishshell.com/) and
-[oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
-
+For fish, install [fish-shell](http://fishshell.com/)
 
 # Installation
 # Makefile (automatic)
@@ -43,7 +41,7 @@ For example (assuming you clone this repo into your home directory):
 ```sh
 stow vim
 stow nvim
-stow omf
+stow fish
 ...
 ```
 
