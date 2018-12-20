@@ -40,6 +40,7 @@ Thumbs.db
 zsh/other_aliases/*
 .netrwhist
 fish_history
+fishd.*
 vim/.vim/plugged
 vim/.vim/autoload/*
 vim/.vim/ftplugin/go/gocomplete.vim
