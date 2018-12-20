@@ -50,6 +50,7 @@ fishd.*
 fisher.fish 
 fish/.config/fish/functions
 fish/.config/fish/conf.d
+fish/.config/fish/completions/aws.fish
 
 # vim #
 #######
