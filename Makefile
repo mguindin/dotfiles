@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := all
-.PHONY : link unlink install asdf
+.PHONY : link unlink install asdf alpine
 
 all: install asdf link
 
@@ -23,4 +23,7 @@ unlink:
 	for d in */; do \
 		stow -D $$d ; \
 	done
+
+alpine:
+	docker build -t mguindin/dev -f Dockerfile.alpine .
 

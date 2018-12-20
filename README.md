@@ -57,17 +57,15 @@ make link
 I've also included Dockerfiles for build this repo into a usable developer
 container (for both ubuntu and alpine)
 
-### Developer
+### Developer Image (alpine)
 
 ```sh
 docker build -t mguindin/dev -f Dockerfile.alpine .
 ```
 
-### Jumpbox
-This is a dockerfile for a bastion or jumpbox
-
+### Developer Image (ubuntu)
 ```sh
-docker build -t mguindin/jump -f Dockerfile.jump .
+docker build -t mguindin/ubuntu -f Dockerfile .
 ```
 
 ## Fonts
