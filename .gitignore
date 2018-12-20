@@ -36,15 +36,26 @@ Compiled source #
 Icon?
 ehthumbs.db
 Thumbs.db
+certs/
 
+# zsh #
+#######
 zsh/other_aliases/*
 .netrwhist
+
+# Fish #
+########
 fish_history
+fishd.*
+fisher.fish 
+fish/.config/fish/functions
+fish/.config/fish/conf.d
+
+# vim #
+#######
 vim/.vim/plugged
 vim/.vim/autoload/*
 vim/.vim/ftplugin/go/gocomplete.vim
-omf/.config/fish
-certs/
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/autoload/
 plug.vim.old
