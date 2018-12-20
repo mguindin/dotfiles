@@ -20,3 +20,26 @@ abbr nv nvim
 abbr pi2 'pyenv global 2.7.15'
 abbr pi3 'pyenv global 3.6.6'
 abbr cat bat
+abbr gpull 'git pull'
+abbr arn 'asdf reshim nodejs'
+abbr gco 'git checkout'
+abbr gcm 'git checkout master'
+abbr gpm 'git pull origin master'
+abbr ds 'docker-compose stop'
+abbr gp 'git pull'
+abbr be 'bundle exec'
+abbr dcb 'docker-compose build'
+abbr dps 'docker ps'
+abbr dcs 'docker-compose stop'
+abbr mux tmuxinator
+abbr dcu 'docker-compose up --build -d'
+abbr dcd 'docker-compose down -v'
+abbr gd 'git diff'
+abbr s 'git status'
+abbr vf 'vim /Users/guindim/.config/omf/init.fish'
+abbr tl 'tmux ls'
+abbr nv nvim
+abbr pi2 'pyenv global 2.7.15'
+abbr pi3 'pyenv global 3.6.6'
+abbr cat bat
+abbr sf 'source /Users/guindim/.config/fish/config.fish'
