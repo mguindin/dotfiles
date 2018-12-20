@@ -7,3 +7,5 @@ oh-my-fish/plugin-pyenv
 oh-my-fish/plugin-wifi-password
 oh-my-fish/plugin-bang-bang
 oh-my-fish/theme-bobthefish
+derekstavis/plugin-foreign-env
+mguindin/fish_functions

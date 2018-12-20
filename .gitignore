@@ -48,6 +48,8 @@ zsh/other_aliases/*
 fish_history
 fishd.*
 fisher.fish 
+fish/.config/fish/functions
+fish/.config/fish/conf.d
 
 # vim #
 #######
