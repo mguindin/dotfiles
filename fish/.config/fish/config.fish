@@ -32,6 +32,8 @@ set -xg LC_CTYPE "en_US.UTF-8"
 set -xg LC_MESSAGES "en_US.UTF-8"
 set -xg LC_COLLATE C
 
+# fzf / rg
+set -xg FZF_DEFAULT_COMMAND "rg --files"
 # set up PATH
 # Add normal binary paths
 set -xg PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /bin $PATH
