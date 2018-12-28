@@ -44,22 +44,23 @@ if command -sq go
 end
 
 # Add rust binaries, if available
-if test -d $HOME/.cargo
+if test -d "$HOME/.cargo"
   source $HOME/.cargo/env
   set -xg PATH $HOME/.cargo/bin $PATH
 end
 
-if test -d $HOME/.local/bin
+if test -d "$HOME/.local/bin"
   set -xg PATH $HOME/.local/bin $PATH
 end
 
 # asdf
-if test -d $HOME/.asdf
+if test -d "HOME/.asdf"
   source ~/.asdf/asdf.fish
 end
 
-if test -d $SPARK_HOME
-  set -xg PYTHONPATH $SPARK_HOME/python/lib/py4j-0.10.4-src.zip $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
+if test -d "$SPARK_HOME"
+  set spark_python $SPARK_HOME/python/lib/py4j-0.10.4-src.zip
+  set -xg PYTHONPATH $spark_python $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
 end
 
 # Add pyenv, if available
