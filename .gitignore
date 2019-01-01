@@ -52,6 +52,7 @@ fisher.fish
 fish/.config/fish/functions
 fish/.config/fish/conf.d
 fish/.config/fish/completions/aws.fish
+fish/.config/fish/fish_variables
 
 # vim #
 #######
