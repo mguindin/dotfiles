@@ -29,7 +29,6 @@ case "${unameOut}" in
       # Install homebrew
       if ! command -v brew; then \
         echo "brew not installed; installing..."
-        curl -L https://get.oh-my.fish | fish; \
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
         # Tap non-default brew taps
