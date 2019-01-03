@@ -101,7 +101,7 @@ iab Teh The
 " Scrollbar junk
 set guioptions=aAce
 
-colorscheme base16-material-darker
+colorscheme base16-onedark
 
 "Show lines numbers
 set number

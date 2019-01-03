@@ -7,7 +7,7 @@ end
 
 # Base16 Shell
 if status --is-interactive
-  base16 material-darker
+  base16 onedark
 end
 
 switch (uname -a)
