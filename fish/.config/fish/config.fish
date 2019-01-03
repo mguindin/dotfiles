@@ -71,12 +71,6 @@ if command -sq pyenv
   status --is-interactive; and source (pyenv init -|psub); and source (pyenv virtualenv-init -|psub)
 end
 
-
-switch (uname -a)
-  case '*amazon*'
-    set -xg PATH /usr/local/aws/bin $PATH
-end
-
 set -xg MANPATH /usr/local/opt/coreutils/libexec/gnuman /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
 
 # fish status
