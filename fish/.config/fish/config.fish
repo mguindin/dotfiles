@@ -54,7 +54,7 @@ if test -d "$HOME/.local/bin"
 end
 
 # asdf
-if test -d "HOME/.asdf"
+if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
 end
 
