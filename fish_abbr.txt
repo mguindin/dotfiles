@@ -1,4 +1,3 @@
-abbr -a -U -- cat bat
 abbr -a -U -- dcb 'docker-compose build'
 abbr -a -U -- dcd 'docker-compose down -v'
 abbr -a -U -- dcs 'docker-compose stop'
