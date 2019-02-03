@@ -18,19 +18,37 @@ indent_style = space
 insert_final_newline = true
 # Remove whitespace characters at the end of line
 trim_trailing_whitespace = true
+# Removing trailing spaces
+trim_trailing_spaces = true
 
 [*.java]
 # Java is 4 characters for indentation
 indent_size = 4
+indent_style = space
 
-[Makefile]
-# Makefiles need tab indentation
-indent_style = tab
-
-[*.md]
-trim_trailing_whitespace = false
+[*.py]
+# Python PEP-8 indent is 4 spaces
+indent_size = 4
+indent_style = space
 
 # Minified JavaScript files shouldn't be changed
 [**.min.js]
 indent_style = ignore
 insert_final_newline = ignore
+
+# Placeholder files
+[{*.gitkeep,__init__.py}]
+insert_final_newline = none
+
+# Lexer restrictions
+[{makefile*,Makefile*,*.mk,*.makefile,*.Makefile,GNUmakefile*,BSDmakefile,*.go,*.gitmodules}]
+indent_style = tab
+
+# Freeform text
+[{*.txt,*.yaml,*.yml,*.cob,*.emacs,*.el,*.lisp,*.lsp,*.scm,*.setup,*.meta,*.clj,*.rkt,*.ecl,*.sbcl,*.abcl,*.eclrc,*.sbclrc,*.asd,*.snusp}]
+indent_size = none
+trim_trailing_whitespace = false
+
+[*.md]
+trim_trailing_spaces = false
+max_line_length = 80
