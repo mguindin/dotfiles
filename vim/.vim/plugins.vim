@@ -10,7 +10,8 @@ call plug#begin('~/.vim/plugged')
 "-------------------=== Status Bar ===-----------------------------
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
+Plug 'danielwe/base16-vim'
 
 "-------------------=== Basics ===-----------------------------
 " Indent text object
