@@ -59,6 +59,8 @@ if test -d "$HOME/.asdf"
 end
 
 if test -d "$SPARK_HOME"
+  # Set this to not have issues over VPN running spark locally
+  set -xg SPARK_LOCAL_IP 127.0.0.1
   set spark_python $SPARK_HOME/python/lib/py4j-0.10.4-src.zip
   set -xg PYTHONPATH $spark_python $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
 end
