@@ -16,11 +16,11 @@ case "${unameOut}" in
           linux-headers bash
       else
         echo "ubuntu installing with apt-get..."
-        apt-get update && apt-get -qq install \
+        sudo apt-get update && apt-get -qq install \
           stow fish git automake autoconf libreadline-dev \
           libncurses-dev libssl-dev libyaml-dev \
           libxslt-dev libffi-dev libtool unixodbc-dev \
-          make vim tmux mosh curl musl-dev gnupg\
+          vim tmux mosh curl musl-dev gnupg awscli\
           curl python3-dev python3 automake autoconf ssh gcc neovim
       fi
       ;;

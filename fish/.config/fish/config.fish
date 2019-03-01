@@ -65,8 +65,13 @@ if test -d "$SPARK_HOME"
   set -xg PYTHONPATH $spark_python $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
 end
 
+# For ubuntu
+if test -d "/snap/bin"
+  set -xg PATH /snap/bin $PATH
+end
+
 # Add pyenv, if available
-if command -sq pyenv
+if test -d "$HOME/.pyenv"
   set -x PYENV_ROOT $HOME/.pyenv
   set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
   set -xg PATH $PYENV_ROOT/bin $PATH
