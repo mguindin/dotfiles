@@ -8,8 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 "-------------------=== Status Bar ===-----------------------------
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 " Plug 'chriskempson/base16-vim'
 Plug 'danielwe/base16-vim'
 
@@ -27,7 +26,7 @@ Plug 'junegunn/fzf.vim'
 
 "-------------------=== Languages ===----------------------
 "-------------------=== Code completion ===-----------------------
-Plug 'maralla/completor.vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 "-------------------=== Scala ===--------------------------
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -43,12 +42,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 if has('python3') 
   Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' } "Python mode (docs, refactor, lints...)
   Plug 'ryanolsonx/vim-lsp-python', { 'for': 'python' }
-
-  " ultisnips engine
-  Plug 'SirVer/ultisnips'
-  "
-  " Snippets for ultisnips
-  Plug 'honza/vim-snippets'
 endif
 
 "-------------------=== Database ===------------------------------
@@ -62,6 +55,12 @@ Plug 'Shougo/neco-syntax'
 Plug 'justinmk/vim-sneak'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
+" ultisnips engine
+Plug 'SirVer/ultisnips'
+"
+" Snippets for ultisnips
+Plug 'honza/vim-snippets'
+
 Plug 'w0rp/ale'                           " syntax checking
 
 call plug#end()
@@ -73,11 +72,6 @@ let $GOPATH = $HOME."/go"
 "=====================================================
 "" Python settings
 "=====================================================
-" Fix for Python 3.7 deprecation warning
-if has('python3') && !has('patch-8.1.201')
-  silent! python3 1
-endif
-
 let g:pymode_python= 'python3'
 let g:python2_host_prog=$HOME.'/.pyenv/shims/python2'
 let g:python3_host_prog= $HOME.'/.pyenv/shims/python3'
@@ -142,42 +136,124 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Code completion
+" Better display for messages
+set cmdheight=2
 
-" Python
-let g:completor_python_binary=$HOME.'/.pyenv/shims/python'
-" C/C++
-let g:completor_clang_binary='/usr/bin/clang'
-" Go
-let g:completor_gocode_binary=$GOPATH.'/bin/gocode' 
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
 
-" Use TAB to complete when typing words, else inserts TABs as usual.  Uses
-" dictionary, source files, and completor to find matching words to complete.
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
-" Note: usual completion is on <C-n> but more trouble to press all the time.
-" Never type the same word twice and maybe learn a new spellings!
-" Use the Linux dictionary when spelling is in doubt.
-function! Tab_Or_Complete() abort
-  " If completor is already open the `tab` cycles through suggested completions.
-  if pumvisible()
-    return "\<C-N>"
-  " If completor is not open and we are in the middle of typing a word then
-  " `tab` opens completor menu.
-  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-R>=completor#do('complete')\<CR>"
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
   else
-    " If we aren't typing a word and we press `tab` simply do the normal `tab`
-    " action.
-    return "\<Tab>"
+    call CocAction('doHover')
   endif
 endfunction
 
-" Use `tab` key to select completions.  Default is arrow keys.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Use tab to trigger auto completion.  Default suggests completions as you type.
-let g:completor_auto_trigger = 1
-inoremap <expr> <Tab> Tab_Or_Complete()
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` for fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+
+" Add diagnostic info for https://github.com/itchyny/lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
+
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
 
 " Ale
 let b:ale_linters = ['flake8']
@@ -207,8 +283,3 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Enable completion where available.
 let g:ale_completion_enabled = 1
-
-"vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#enabled = 1 " Enable branches
-let g:airline_theme='base16'

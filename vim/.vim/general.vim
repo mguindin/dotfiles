@@ -1,7 +1,8 @@
 " -- general settings
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
+" Don't show --NORMAL-- or --INSERT--
+set noshowmode
 " fix problems with uncommon shells (fish, xonsh) and plugins running commands
 " (neomake, ...)
 set shell=/bin/bash
