@@ -136,9 +136,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Code completion
-" Better display for messages
-set cmdheight=2
-
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
 
