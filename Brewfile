@@ -1,4 +1,5 @@
 tap "burntsushi/ripgrep", "https://github.com/BurntSushi/ripgrep.git"
+tap "caskroom/fonts"
 tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -69,6 +70,7 @@ cask "riot"
 cask "signal"
 cask "vanilla"
 cask "zenmap"
+cask "caskroom/fonts/font-fira-code"
 mas "Airmail 3", id: 918858936
 mas "Kindle", id: 405399194
 mas "Patterns", id: 429449079

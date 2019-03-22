@@ -58,6 +58,10 @@ if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
 end
 
+if test "$HOME/.machine.fish"
+  source $HOME/.machine.fish
+end
+
 if test -d "$SPARK_HOME"
   # Set this to not have issues over VPN running spark locally
   set -xg SPARK_LOCAL_IP 127.0.0.1

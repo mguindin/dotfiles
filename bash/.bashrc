@@ -112,3 +112,5 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.machine.sh ] && source ~/.machine.sh
