@@ -40,7 +40,8 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 
 "-------------------=== Python ===--------------------------------"
 if has('python3') 
-  Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' } "Python mode (docs, refactor, lints...)
+   "Python mode (docs, refactor, lints...)
+  Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
   Plug 'ryanolsonx/vim-lsp-python', { 'for': 'python' }
 endif
 

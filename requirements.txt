@@ -2,3 +2,4 @@ neovim
 jedi
 awscli
 cfn-lint
+python-language-server
