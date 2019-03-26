@@ -68,12 +68,13 @@ cask "quickhash"
 cask "riot"
 cask "signal"
 cask "vanilla"
+cask "wireshark"
 cask "zenmap"
 cask "caskroom/fonts/font-fira-code"
-mas "Airmail 3", id: 918858936
-mas "Kindle", id: 405399194
-mas "Patterns", id: 429449079
 mas "Quiver", id: 866773894
+mas "Airmail 3", id: 918858936
 mas "Reeder", id: 880001334
-mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
+mas "ToothFairy", id: 1191449274
+mas "Patterns", id: 429449079
+mas "Kindle", id: 405399194
