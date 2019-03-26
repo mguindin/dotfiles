@@ -70,3 +70,6 @@ plug.vim.old
 *.kbx
 gnupg/.gnupg/crls.d/
 gnupg/.gnupg/random_seed
+
+# Karabiner-elements #
+karabiner/.config/karabiner/automatic_backups/
