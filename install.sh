@@ -30,18 +30,29 @@ case "${unameOut}" in
       if ! command -v brew; then \
         echo "brew not installed; installing..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-        # Tap non-default brew taps
-        brew tap Homebrew/bundle
-
-        # Install from brew
-        brew bundle
-
-        # Install fzf plugins
         $(brew --prefix)/opt/fzf/install
       else
         echo "brew installed; continuing"
       fi
+
+      echo "Installing from Brew Bundle file"
+      # Tap non-default brew taps
+      brew tap Homebrew/bundle
+        # Install from brew
+      brew bundle
+
+      echo "Installing fzf plugins"
+      $(brew --prefix)/opt/fzf/install
+
+      echo "configuring macOS for better usability"
+      echo "Unhiding ~/Library"
+      chflags nohidden ~/Library #Show Library
+      echo "Setting to show all hidden files in Finder"
+      defaults write com.apple.finder AppleShowAllFiles YES #Show Hidden Files
+      echo "Show path bar in Finder"
+      defaults write com.apple.finder ShowPathbar -bool true #Show Path Bar
+      echo "Show status bar in Finder"
+      defaults write com.apple.finder ShowStatusBar -bool true #Show status Bar
       ;;
 esac
 
