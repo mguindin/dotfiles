@@ -47,12 +47,18 @@ case "${unameOut}" in
       echo "configuring macOS for better usability"
       echo "Unhiding ~/Library"
       chflags nohidden ~/Library #Show Library
+
       echo "Setting to show all hidden files in Finder"
       defaults write com.apple.finder AppleShowAllFiles YES #Show Hidden Files
+
       echo "Show path bar in Finder"
       defaults write com.apple.finder ShowPathbar -bool true #Show Path Bar
+
       echo "Show status bar in Finder"
       defaults write com.apple.finder ShowStatusBar -bool true #Show status Bar
+
+      echo "Installing macOS SDK Headers (necessary for building certain tools)"
+      sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
       ;;
 esac
 

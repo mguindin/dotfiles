@@ -44,8 +44,15 @@ insert_final_newline = none
 [{makefile*,Makefile*,*.mk,*.makefile,*.Makefile,GNUmakefile*,BSDmakefile,*.go,*.gitmodules}]
 indent_style = tab
 
+# YAML
+
+[{*.yaml,*.yml}]
+indent_size = none
+indent_style = space
+trim_trailing_spaces = false
+
 # Freeform text
-[{*.txt,*.yaml,*.yml,*.cob,*.emacs,*.el,*.lisp,*.lsp,*.scm,*.setup,*.meta,*.clj,*.rkt,*.ecl,*.sbcl,*.abcl,*.eclrc,*.sbclrc,*.asd,*.snusp}]
+[{*.txt,*.cob,*.emacs,*.el,*.lisp,*.lsp,*.scm,*.setup,*.meta,*.clj,*.rkt,*.ecl,*.sbcl,*.abcl,*.eclrc,*.sbclrc,*.asd,*.snusp}]
 indent_size = none
 trim_trailing_whitespace = false
 
