@@ -4,4 +4,5 @@ awscli
 cfn-lint
 python-language-server
 boto3
+virtualfish
 

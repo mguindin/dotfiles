@@ -78,8 +78,12 @@ end
 if test -d "$HOME/.pyenv"
   set -x PYENV_ROOT $HOME/.pyenv
   set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
+  set -x WORKON_HOME $HOME/.ve
+  set -x PROJECT_HOME $HOME/p
+  set -x VIRTUALFISH_HOME $HOME/.ve
   set -xg PATH $PYENV_ROOT/bin $PATH
   status --is-interactive; and source (pyenv init -|psub); and source (pyenv virtualenv-init -|psub)
+  eval (python -m virtualfish compat_aliases auto_activation)
 end
 
 set -xg MANPATH /usr/local/opt/coreutils/libexec/gnuman /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
