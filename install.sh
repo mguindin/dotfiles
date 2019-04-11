@@ -14,6 +14,15 @@ case "${unameOut}" in
           git stow python3 musl-dev gnupg\
           curl git stow python3-dev python3 automake autoconf openssh gcc neovim\
           linux-headers bash
+      elif command -v yum; then \
+        # This is RHEL / amazon linux
+        echo "red hat/amazon linux installing with yum..."
+        # Let's add fish
+        sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RHEL_7/shells:fish:release:3.repo
+        sudo yum update && sudo yum install -yy make vim fish tmux mosh curl\
+          git stow python3 musl-dev gnupg\
+          curl git stow python3-dev python3 automake autoconf openssh gcc neovim\
+          linux-headers bash
       else
         echo "ubuntu installing with apt-get..."
         sudo apt-get update && apt-get -qq install \
