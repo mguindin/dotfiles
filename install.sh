@@ -10,19 +10,20 @@ case "${unameOut}" in
       if command -v apk; then \
         # This is alpine
         echo "alpine installing with apk..."
-        apk update && apk add --no-cache make vim fish tmux mosh curl\
-          git stow python3 musl-dev gnupg\
-          curl git stow python3-dev python3 automake autoconf openssh gcc neovim\
+        apk update && apk add --no-cache\
+          make vim fish tmux mosh curl\
+          git stow python3 python3-dev musl-dev gnupg\
+          automake autoconf openssh gcc neovim\
           linux-headers bash
       elif command -v yum; then \
         # This is RHEL / amazon linux
         echo "red hat/amazon linux installing with yum..."
         # Let's add fish
         sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RHEL_7/shells:fish:release:3.repo
-        sudo yum update && sudo yum install -yy make vim fish tmux mosh curl\
-          git stow python3 musl-dev gnupg\
-          curl git stow python3-dev python3 automake autoconf openssh gcc neovim\
-          linux-headers bash
+        sudo yum update && sudo yum install -yy\
+          make vim fish tmux mosh curl\
+          git stow gnupg automake autoconf\
+          openssh gcc bash ssh
       else
         echo "ubuntu installing with apt-get..."
         sudo apt-get update && apt-get -qq install \
@@ -30,7 +31,7 @@ case "${unameOut}" in
           libncurses-dev libssl-dev libyaml-dev \
           libxslt-dev libffi-dev libtool unixodbc-dev \
           vim tmux mosh curl musl-dev gnupg awscli\
-          curl python3-dev python3 automake autoconf ssh gcc neovim
+          curl python3-dev python3 ssh gcc neovim
       fi
       ;;
     Darwin*)\
