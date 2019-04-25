@@ -109,6 +109,10 @@ set -g theme_nerd_fonts no
 set -g theme_show_exit_status yes
 set -g theme_newline_cursor no
 
+if command -sq direnv
+  direnv hook fish | source
+end
+
 if command -sq kitty
   kitty + complete setup fish | source
 end
