@@ -53,6 +53,11 @@ if test -d "$HOME/.local/bin"
   set -xg PATH $HOME/.local/bin $PATH
 end
 
+# For ubuntu
+if test -d "/snap/bin"
+  set -xg PATH /snap/bin $PATH
+end
+
 # asdf
 if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
@@ -67,11 +72,6 @@ if test -d "$SPARK_HOME"
   set -xg SPARK_LOCAL_IP 127.0.0.1
   set spark_python $SPARK_HOME/python/lib/py4j-0.10.4-src.zip
   set -xg PYTHONPATH $spark_python $SPARK_HOME/python $SPARK_HOME/python/build $PYTHONPATH
-end
-
-# For ubuntu
-if test -d "/snap/bin"
-  set -xg PATH /snap/bin $PATH
 end
 
 # Add pyenv, if available

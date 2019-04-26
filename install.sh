@@ -26,12 +26,17 @@ case "${unameOut}" in
           openssh gcc bash ssh
       else
         echo "ubuntu installing with apt-get..."
-        sudo apt-get update && apt-get -qq install \
+        # Updated fish
+        sudo apt-add-repository -qq ppa:fish-shell/release-3
+        sudo apt-get update && sudo apt-get -qq install \
           stow fish git automake autoconf libreadline-dev \
           libncurses-dev libssl-dev libyaml-dev \
           libxslt-dev libffi-dev libtool unixodbc-dev \
           vim tmux mosh curl musl-dev gnupg awscli\
-          curl python3-dev python3 ssh gcc neovim
+          curl python3-dev python3 automake autoconf\
+          ssh gcc neovim yarn
+        # Install node yarn (after node/npm)
+        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
       fi
       ;;
     Darwin*)\
