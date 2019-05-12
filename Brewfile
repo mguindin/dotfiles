@@ -52,6 +52,7 @@ brew "telnet"
 brew "terminal-notifier"
 brew "thefuck"
 brew "tig"
+brew "tldr"
 brew "tmux"
 brew "vim", args: ["with-lua", "with-override-system-vi"]
 brew "watch"
