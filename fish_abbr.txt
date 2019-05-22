@@ -13,6 +13,7 @@ abbr -a -U -- gd 'git diff'
 abbr -a -U -- gp 'git pull'
 abbr -a -U -- gpm 'git pull origin master'
 abbr -a -U -- gpull 'git pull'
+abbr -a -U -- ls lsd
 abbr -a -U -- mux tmuxinator
 abbr -a -U -- nv nvim
 abbr -a -U -- pa 'pyenv activate'

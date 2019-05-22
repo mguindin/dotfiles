@@ -6,7 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "isacikgoz/gitin"
 tap "wagoodman/dive"
-brew "apache-spark"
+brew "apache-spark", link: false
 brew "apache-zeppelin"
 brew "awscli"
 brew "bash"
@@ -33,6 +33,7 @@ brew "htop"
 brew "hyperfine"
 brew "iftop"
 brew "jq"
+brew "lsd"
 brew "mas"
 brew "maven"
 brew "mkcert"
@@ -46,6 +47,7 @@ brew "pyenv-virtualenv"
 brew "pyenv-virtualenvwrapper"
 brew "pyenv-which-ext"
 brew "ranger"
+brew "readline"
 brew "sbt"
 brew "skaffold"
 brew "sshuttle"
@@ -59,6 +61,7 @@ brew "tmux"
 brew "vim", args: ["with-lua", "with-override-system-vi"]
 brew "watch"
 brew "wget"
+brew "xz"
 brew "zlib"
 brew "zsh"
 brew "burntsushi/ripgrep/ripgrep-bin"
@@ -81,10 +84,13 @@ cask "vanilla"
 cask "wireshark"
 cask "zenmap"
 cask "caskroom/fonts/font-fira-code"
+cask "caskroom/fonts/font-firacode-nerd-font"
 mas "Quiver", id: 866773894
-mas "Airmail 3", id: 918858936
+mas "ReadKit", id: 588726889
 mas "Reeder", id: 880001334
 mas "Xcode", id: 497799835
+mas "Todoist", id: 585829637
 mas "ToothFairy", id: 1191449274
 mas "Patterns", id: 429449079
 mas "Kindle", id: 405399194
+mas "Xcode", id: 497799835
