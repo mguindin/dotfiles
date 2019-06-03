@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "isacikgoz/gitin"
 tap "wagoodman/dive"
+brew "ansifilter"
 brew "apache-spark", link: false
 brew "apache-zeppelin"
 brew "awscli"
