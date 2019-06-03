@@ -1,7 +1,7 @@
 " Set leader to space
 " keep <space>w as :w and <space>q as :q
 map <space> <Leader>
-nnoremap <Leader>w :w
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>wq :wq
 nnoremap <Leader>wq! :wq!<CR>
 nnoremap <Leader>q :q
@@ -41,6 +41,13 @@ nnoremap <A-x> <C-x>
 nnoremap <Leader>] :tabn<cr>
 nnoremap <Leader>[ :tabp<cr>
 nnoremap <Leader>T :tabe<cr>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tp :tabp<CR>
+nnoremap <leader>tc :tabclose<CR>
+
+" Buffers
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
 
 " Windows and Splits
 " easier split navigation
