@@ -58,10 +58,6 @@ if test -d "/snap/bin"
   set -xg PATH /snap/bin $PATH
 end
 
-# asdf
-if test -d "$HOME/.asdf"
-  source ~/.asdf/asdf.fish
-end
 
 if test "$HOME/.machine.fish"
   source $HOME/.machine.fish
@@ -117,3 +113,7 @@ if command -sq kitty
   kitty + complete setup fish | source
 end
 
+# asdf
+if test -d "$HOME/.asdf"
+  source ~/.asdf/asdf.fish
+end
