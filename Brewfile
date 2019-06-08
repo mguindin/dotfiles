@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "isacikgoz/gitin"
+tap "railwaycat/emacsmacport"
 tap "wagoodman/dive"
 brew "ansifilter"
 brew "apache-spark", link: false
@@ -72,6 +73,7 @@ brew "wagoodman/dive/dive"
 cask "alacritty"
 cask "balenaetcher"
 cask "dbeaver-community"
+cask "emacs-mac-spacemacs-icon"
 cask "firefox"
 cask "insomnia"
 cask "jetbrains-toolbox"
@@ -84,13 +86,11 @@ cask "signal"
 cask "vanilla"
 cask "wireshark"
 cask "zenmap"
-cask "caskroom/fonts/font-fira-code"
 cask "caskroom/fonts/font-firacode-nerd-font"
 mas "Quiver", id: 866773894
 mas "ReadKit", id: 588726889
 mas "Reeder", id: 880001334
 mas "Xcode", id: 497799835
-mas "Todoist", id: 585829637
 mas "ToothFairy", id: 1191449274
 mas "Patterns", id: 429449079
 mas "Kindle", id: 405399194
