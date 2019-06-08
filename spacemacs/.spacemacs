@@ -51,17 +51,15 @@ values."
             c-c++-enable-clang-support t)
      javascript
      typescript
+     python
      ruby
      (ruby :variables
-           ruby-version-manager 'rvm
            ruby-enable-enh-ruby-mode t)
-     erlang
      scala
      java
      yaml
      colors
      docker
-     ruby-on-rails
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -140,7 +138,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata for Powerline"
+   dotspacemacs-default-font '("FuraCode Nerd Font Retina"
                                :size 16
                                :weight normal
                                :width normal
@@ -370,6 +368,7 @@ directory to make multiple eshell windows easier."
        (java . t)
        (js . t)
        (ruby . t)
+       (python . t)
        (scala . t)
        (sh . t)
        ))
@@ -399,7 +398,7 @@ directory to make multiple eshell windows easier."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (winum unfill org-mime fuzzy org-category-capture ghub let-alist seq csv-mode enh-ruby-mode minitest hide-comnt go-guru docker tablist docker-tramp uuidgen tide typescript-mode pug-mode ox-gfm osx-dictionary org-projectile org org-download mwim livid-mode skewer-mode simple-httpd link-hint github-search flyspell-correct-helm flyspell-correct evil-visual-mark-mode evil-unimpaired evil-ediff goto-chg eshell-z dumb-jump diminish company-emacs-eclim column-enforce-mode color-identifiers-mode clojure-snippets undo-tree tss yaxception rake f pcre2el alert log4e gntp markdown-mode json-snatcher json-reformat parent-mode multi request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht flx magit-popup iedit anzu scala-mode web-completion-data dash-functional tern pos-tip company hydra inflections edn multiple-cursors paredit s peg eval-sexp-fu highlight spinner clojure-mode epl inf-ruby yasnippet packed dash avy async auto-complete popup package-build bind-key bind-map evil ws-butler spaceline persp-mode org-plus-contrib neotree leuven-theme js2-refactor indent-guide help-fns+ helm-themes helm-descbinds helm-ag ace-jump-helm-line cider sbt-mode smartparens flycheck go-mode helm magit git-commit projectile yaml-mode xterm-color with-editor window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern-auto-complete tagedit sql-indent spotify spacemacs-theme smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters queue quelpa projectile-rails powerline popwin pkg-info pbcopy paradox page-break-lines osx-trash orgit org-repo-todo org-present org-pomodoro org-bullets open-junk-file noflet multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative less-css-mode launchctl json-mode js2-mode js-doc jade-mode info+ ido-vertical-mode hungry-delete htmlize hl-todo hive highlight-parentheses highlight-numbers highlight-indentation helm-swoop helm-spotify helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-css-scss helm-core helm-company helm-c-yasnippet google-translate golden-ratio go-eldoc gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md geeknote flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help erlang ensime emmet-mode elisp-slime-nav eclim dockerfile-mode disaster diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-c-headers coffee-mode cmake-mode clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste base16-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic transient lv sesman parseedn parseclj a winum unfill org-mime fuzzy org-category-capture ghub let-alist seq csv-mode enh-ruby-mode minitest hide-comnt go-guru docker tablist docker-tramp uuidgen tide typescript-mode pug-mode ox-gfm osx-dictionary org-projectile org org-download mwim livid-mode skewer-mode simple-httpd link-hint github-search flyspell-correct-helm flyspell-correct evil-visual-mark-mode evil-unimpaired evil-ediff goto-chg eshell-z dumb-jump diminish company-emacs-eclim column-enforce-mode color-identifiers-mode clojure-snippets undo-tree tss yaxception rake f pcre2el alert log4e gntp markdown-mode json-snatcher json-reformat parent-mode multi request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht flx magit-popup iedit anzu scala-mode web-completion-data dash-functional tern pos-tip company hydra inflections edn multiple-cursors paredit s peg eval-sexp-fu highlight spinner clojure-mode epl inf-ruby yasnippet packed dash avy async auto-complete popup package-build bind-key bind-map evil ws-butler spaceline persp-mode org-plus-contrib neotree leuven-theme js2-refactor indent-guide help-fns+ helm-themes helm-descbinds helm-ag ace-jump-helm-line cider sbt-mode smartparens flycheck go-mode helm magit git-commit projectile yaml-mode xterm-color with-editor window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern-auto-complete tagedit sql-indent spotify spacemacs-theme smooth-scrolling smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters queue quelpa projectile-rails powerline popwin pkg-info pbcopy paradox page-break-lines osx-trash orgit org-repo-todo org-present org-pomodoro org-bullets open-junk-file noflet multi-term move-text mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative less-css-mode launchctl json-mode js2-mode js-doc jade-mode info+ ido-vertical-mode hungry-delete htmlize hl-todo hive highlight-parentheses highlight-numbers highlight-indentation helm-swoop helm-spotify helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-css-scss helm-core helm-company helm-c-yasnippet google-translate golden-ratio go-eldoc gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md geeknote flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help erlang ensime emmet-mode elisp-slime-nav eclim dockerfile-mode disaster diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-c-headers coffee-mode cmake-mode clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste base16-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
