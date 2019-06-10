@@ -20,5 +20,13 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     }
-  }
+  },
+  "python.formatting.provider": "black",
+  "python.venvFolders": [
+    ".ve",
+    "envs",
+    ".pyenv",
+    ".direnv"
+  ],
+  "python.venvPath": "~/.ve"
 }

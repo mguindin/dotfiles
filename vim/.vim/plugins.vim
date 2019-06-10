@@ -27,7 +27,12 @@ Plug 'junegunn/fzf.vim'
 "-------------------=== Languages ===----------------------
 "-------------------=== Code completion ===-----------------------
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+"-------------------=== Python ===--------------------------------"
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+
+"-------------------=== Java ===--------------------------------"
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
 
 "-------------------=== Scala ===--------------------------
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -39,12 +44,11 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "-------------------=== Go ===-----------------------------
 Plug 'fatih/vim-go', { 'for': 'go' }
 
-"-------------------=== Python ===--------------------------------"
-if has('python3') 
-   "Python mode (docs, refactor, lints...)
-  Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
-  Plug 'ryanolsonx/vim-lsp-python', { 'for': 'python' }
-endif
+"-------------------=== Git ===--------------------------------"
+Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
+
+"-------------------=== Yaml ===--------------------------------"
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 
 "-------------------=== Database ===------------------------------
 Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
@@ -63,72 +67,11 @@ Plug 'SirVer/ultisnips'
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
 
-Plug 'w0rp/ale'                           " syntax checking
-
 call plug#end()
 
 "--- Plugin configuration
 " Set GoPath for vim-go
 let $GOPATH = $HOME."/go"
-
-"=====================================================
-"" Python settings
-"=====================================================
-let g:pymode_python= 'python3'
-let g:python2_host_prog=$HOME.'/.pyenv/shims/python2'
-let g:python3_host_prog= $HOME.'/.pyenv/shims/python3'
-" Skip the check of neovim module
-let g:python3_host_skip_check = 1
-
-" rope
-let g:pymode_rope=0
-let g:pymode_rope_completion=0
-let g:pymode_rope_complete_on_dot=0
-let g:pymode_rope_auto_project=0
-let g:pymode_rope_enable_autoimport=0
-let g:pymode_rope_autoimport_generate=0
-let g:pymode_rope_guess_project=0
-
-" documentation
-let g:pymode_doc=0
-let g:pymode_doc_bind='K'
-
-" lints
-let g:pymode_lint=0
-
-" breakpoints
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
-
-" syntax highlight
-let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_print_as_function=g:pymode_syntax_all
-let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
-let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_self=g:pymode_syntax_all
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_formatting=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_format=g:pymode_syntax_all
-let g:pymode_syntax_string_templates=g:pymode_syntax_all
-let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
-let g:pymode_syntax_builtin_types=g:pymode_syntax_all
-let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
-let g:pymode_syntax_docstrings=g:pymode_syntax_all
-
-" code folding
-let g:pymode_folding=0
-
-" pep8 indents
-let g:pymode_indent=1
-
-" code running
-let g:pymode_run=1
-let g:pymode_run_bind='<F5>'
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -188,23 +131,12 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 vmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -251,34 +183,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <space>l  :<C-u>CocListResume<CR>
 
-
-" Ale
-let b:ale_linters = ['flake8']
-let g:ale_linters = {
-      \   'gitcommit': ['gitlint'],
-      \   'python': ['pyls'],
-      \   'go': ['gometalinter'],
-      \   'cpp': [],
-      \   'c': ['clangtidy'],
-      \}
-let b:ale_fixers = [
-      \ 'remove_trailing_lines',
-      \   'isort',
-      \   'ale#fixers#generic_python#BreakUpLongLines',
-      \   'yapf',
-      \]
-
-" These are fallbacks for language clients
-nnoremap <Leader>rj :ALEGoToDefinition<CR>
-nnoremap <Leader>rf :ALEFindReferences<CR>
-nnoremap <Leader>rh :ALEHover<CR>
-nnoremap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
-
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" Enable completion where available.
-let g:ale_completion_enabled = 1

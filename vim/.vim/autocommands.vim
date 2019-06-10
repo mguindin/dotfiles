@@ -36,14 +36,13 @@ augroup configgroup
   autocmd InsertEnter * set cul
   autocmd InsertLeave * set nocul
 
-  " ALE linting events
-  set updatetime=1000
-  let g:ale_lint_on_text_changed = 0
-  autocmd CursorHold * call ale#Queue(0)
-  autocmd CursorHoldI * call ale#Queue(0)
-  autocmd InsertEnter * call ale#Queue(0)
-  autocmd InsertLeave * call ale#Queue(0)
-  autocmd FileType gitcommit let g:ale_sign_column_always = 1
+  " coc.nvim
+  " Highlight symbol under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
   " have vim jump to last location in a file on default
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
