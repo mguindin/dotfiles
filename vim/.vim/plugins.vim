@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim'
 "-------------------=== Languages ===----------------------
 "-------------------=== Code completion ===-----------------------
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 
 "-------------------=== Scala ===--------------------------
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }

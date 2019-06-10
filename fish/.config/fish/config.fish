@@ -82,7 +82,7 @@ if test -d "$HOME/.pyenv"
 end
 
 # Add machine-specific stuff if machine.fish is present
-if test "$HOME/.machine.fish"
+if test -d "$HOME/.machine.fish"
   source $HOME/.machine.fish
 end
 

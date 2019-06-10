@@ -64,6 +64,7 @@ brew "vim", args: ["with-lua", "with-override-system-vi"]
 brew "watch"
 brew "wget"
 brew "xz"
+brew "yarn"
 brew "zlib"
 brew "zsh"
 brew "burntsushi/ripgrep/ripgrep-bin"
