@@ -90,7 +90,6 @@ cask "zenmap"
 cask "caskroom/fonts/font-firacode-nerd-font"
 mas "Quiver", id: 866773894
 mas "ReadKit", id: 588726889
-mas "Reeder", id: 880001334
 mas "Xcode", id: 497799835
 mas "ToothFairy", id: 1191449274
 mas "Patterns", id: 429449079
