@@ -18,10 +18,19 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+
 " Let's not write swap, etc
 set nobackup
 set nowritebackup
 set noswapfile
+
+set history=1000
+set tabpagemax=50
+
+set sessionoptions-=options
 
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -64,7 +73,7 @@ set shiftwidth=2
 set shiftround
 set expandtab " tabs are spaces
 
-filetype indent on " load filetype-specific indent files
+filetype plugin indent on " load filetype-specific indent files
 
 " Enable completion window
 set completeopt+=preview

@@ -51,4 +51,6 @@ augroup configgroup
   " ignore the previous autocmd when it's the git commit msg
   autocmd BufReadPost COMMIT_EDITMSG
     \ exe "normal! ggI"
+
+  autocmd CursorHoldI,CursorMovedI * silent! call CocActionAsync('showSignatureHelp')
 augroup END

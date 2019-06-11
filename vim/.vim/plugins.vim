@@ -15,8 +15,7 @@ Plug 'danielwe/base16-vim'
 "-------------------=== Basics ===-----------------------------
 " Indent text object
 Plug 'michaeljsmith/vim-indent-object'
-" `Sensible` basics
-Plug 'tpope/vim-sensible'
+
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
 
@@ -26,20 +25,19 @@ Plug 'junegunn/fzf.vim'
 
 "-------------------=== Languages ===----------------------
 "-------------------=== Code completion ===-----------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 "-------------------=== Python ===--------------------------------"
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile', 'for': 'python'}
 
 "-------------------=== Java ===--------------------------------"
-Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile', 'for': 'java'}
 
 "-------------------=== Scala ===--------------------------
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 
 "-------------------=== Rust ===---------------------------
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile', 'for': 'rust'}
 
 "-------------------=== Go ===-----------------------------
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -56,8 +54,6 @@ Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 " Vim/tmux/linux
 "-------------------=== Tools (vim, tmux, linux, etc) ===---------
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neco-vim'
-Plug 'Shougo/neco-syntax'
 Plug 'justinmk/vim-sneak'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
@@ -171,7 +167,7 @@ let g:lightline = {
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <space>E  :<C-u>CocList extensions<cr>
 " Show commands
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
@@ -184,4 +180,14 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>l  :<C-u>CocListResume<CR>
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
