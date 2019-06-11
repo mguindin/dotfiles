@@ -58,6 +58,7 @@ fish/.config/fish/fish_variables
 #######
 vim/.vim/plugged
 vim/.vim/autoload/*
+vim/.vim/sessions/
 vim/.vim/ftplugin/go/gocomplete.vim
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/autoload/

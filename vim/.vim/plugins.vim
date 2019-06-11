@@ -20,7 +20,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'vim-scripts/YankRing.vim'
 
 " FZF / Ctrlp for file navigation
-Plug 'junegunn/fzf', {'dir': '~/.local/src/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "-------------------=== Languages ===----------------------
@@ -56,6 +56,9 @@ Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 Plug 'Raimondi/delimitMate'
 Plug 'justinmk/vim-sneak'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+
+" Session management
+Plug 'tpope/vim-obsession'
 
 " ultisnips engine
 Plug 'SirVer/ultisnips'
@@ -149,6 +152,8 @@ command! -nargs=0 Format :call CocAction('format')
 " Use `:Fold` for fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
+" Buffer maps
+nnoremap <leader>X :bdelete<CR>
 
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {
@@ -190,4 +195,7 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" FZF Stuff
+nnoremap <leader>t :FZF<CR>
 
