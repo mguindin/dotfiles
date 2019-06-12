@@ -141,13 +141,14 @@ font:
   use_thin_strokes: true
 
 # Should display the render timer
-render_timer: false
+debug:
+  render_timer: false
 
-# Keep the log file after quitting Alacritty.
-persistent_logging: false
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -479,4 +480,6 @@ key_bindings:
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
   - { key: LBracket, mods: Command, chars: "\x1bl"                       }
   - { key: RBracket, mods: Command, chars: "\x1bh"                       }
+  - { key: Add, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
 
