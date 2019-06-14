@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
-[user]
-  name = Matt Guindin
-  # Force email select on a per-repo basis
-  useconfigonly = true
+[includeIf "~/stuff/*"]
+  path = .gitconfig-personal
+[includeIf "~/p/*"]
+  path = .gitconfig-work
 [push]
   default = tracking
 [core]
