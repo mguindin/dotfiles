@@ -19,6 +19,9 @@ augroup configgroup
 
   " Java
   autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+  " Scala
+  autocmd FileType scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
  
   " Dockerfile
   autocmd BufNewFile,BufRead Dockerfile* set filetype=Dockerfile expandtab
