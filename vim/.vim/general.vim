@@ -18,7 +18,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 
-set autoindent
 set backspace=indent,eol,start
 set smarttab
 
@@ -68,11 +67,13 @@ let g:is_posix = 1
 syntax enable
 
 " Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 set expandtab " tabs are spaces
 
+set autoindent
 filetype plugin indent on " load filetype-specific indent files
 
 " Enable completion window
