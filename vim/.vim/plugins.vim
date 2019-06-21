@@ -54,7 +54,6 @@ Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 " Vim/tmux/linux
 "-------------------=== Tools (vim, tmux, linux, etc) ===---------
 Plug 'Raimondi/delimitMate'
-Plug 'justinmk/vim-sneak'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
 " Session management
@@ -78,6 +77,10 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
+
+" neovim
+let g:python_host_prog=$HOME."/.pyenv/versions/neovim/bin/python"
+let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
 
 " Code completion
 " Smaller updatetime for CursorHold & CursorHoldI

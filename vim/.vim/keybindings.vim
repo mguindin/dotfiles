@@ -10,10 +10,12 @@ nnoremap <Leader>q! :q!<CR>
 " Space v
 ""Opens a vertical split and switches over
 nnoremap <Leader>v <C-w>v<C-w>l
+nnoremap <Leader>\| <C-w>v<C-w>l
 
 " Space s
 ""Opens a horizontal split and switches over
 nnoremap <Leader>s <C-w>s<C-w>j
+nnoremap <Leader>- <C-w>s<C-w>j
 " Source vimrc
 nnoremap <Leader>ss :source ~/.vimrc
 
