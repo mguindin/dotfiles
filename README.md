@@ -97,7 +97,7 @@ make unlink
 
 If using alacritty + tmux + fish, then just change the color in fish:
 ```sh
-~/.config/omf/init.fish
+~/.config/fish/config.fish
 ```
 and vim at
 ```sh
