@@ -58,6 +58,8 @@ Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
 " Session management
 Plug 'tpope/vim-obsession'
+" Git
+Plug 'tpope/vim-fugitive'
 
 " ultisnips engine
 Plug 'SirVer/ultisnips'
@@ -163,10 +165,10 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'coc#status'
+      \   'gitbranch': 'fugitive#head'
       \ },
       \ }
 

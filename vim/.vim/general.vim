@@ -3,6 +3,8 @@
 set hidden
 " Don't show --NORMAL-- or --INSERT--
 set noshowmode
+" Display lightline
+set laststatus=2
 " fix problems with uncommon shells (fish, xonsh) and plugins running commands
 " (neomake, ...)
 set shell=/bin/bash
@@ -121,6 +123,7 @@ if has('gui_running')
   "Using a cool patched font for powerline
   set guifont=Fira\ Code:h12
   "set background transparency and solarized style 
+  set t_Co=256
   autocmd vimenter * wincmd p
 else
   set mouse=a
@@ -139,4 +142,3 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical
-
