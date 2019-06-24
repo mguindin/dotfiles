@@ -37,8 +37,8 @@
   dl = "!git ll -1"
   dlc = diff --cached HEAD^
   co = checkout
-  st = status -a
-  ci = commit -a
+  s = status -v
+  c = commit -v
   graph = log --graph --decorate --all
   sync = pull --rebase
   unadd = reset --
