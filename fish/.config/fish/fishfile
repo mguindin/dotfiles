@@ -1,13 +1,5 @@
-oh-my-fish/plugin-aws
-oh-my-fish/plugin-config
-oh-my-fish/plugin-foreign-env
-oh-my-fish/plugin-osx
-oh-my-fish/plugin-sudope
-oh-my-fish/plugin-pyenv
-oh-my-fish/plugin-wifi-password
 oh-my-fish/plugin-bang-bang
 oh-my-fish/theme-bobthefish
-derekstavis/plugin-foreign-env
 mguindin/fish_functions
 jethrokuan/z
 jethrokuan/fzf
