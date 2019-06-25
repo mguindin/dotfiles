@@ -77,7 +77,7 @@ if test -d "$HOME/.pyenv"
   # Add pyenv root to PATH to access its shims
   set -xg PATH $PYENV_ROOT/bin $PATH
   # load pyenv and virtualenv-init, etc
-  status --is-interactive; and source (pyenv init -|psub); and source (pyenv virtualenv-init -|psub)
+  status --is-interactive; and pyenv init - | source; and pyenv virtualenv-init - | source
   eval (python -m virtualfish compat_aliases auto_activation)
 end
 
@@ -99,6 +99,7 @@ set -g theme_display_hostname no
 set -g theme_display_cmd_duration yes
 set -g theme_display_ruby no
 set -g theme_display_virtualenv yes
+set -g theme_display_hg no
 set -g theme_title_display_process yes
 set -g theme_title_display_path yes
 set -g theme_title_display_user yes
@@ -110,13 +111,8 @@ set -g theme_show_exit_status yes
 set -g theme_newline_cursor no
 
 # Source direnv if available
-if command -sq direnv
+if test -d ".envrc"; and command -sq direnv
   direnv hook fish | source
-end
-
-# Source kitty if available
-if command -sq kitty
-  kitty + complete setup fish | source
 end
 
 # asdf (go/scala/python binary manager)
