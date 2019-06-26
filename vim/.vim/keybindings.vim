@@ -70,6 +70,9 @@ nnoremap k gk
 " Remap increment as C-g (C-a is used by tmux)
 nnoremap <C-g> <C-a>
 
+" NERDTree
+map <C-t> :NERDTreeToggle<CR>
+
 "Map escape key to jj -- much faster
 imap jj <esc>
 

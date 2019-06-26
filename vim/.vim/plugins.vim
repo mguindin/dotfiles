@@ -61,6 +61,11 @@ Plug 'tpope/vim-obsession'
 " Git
 Plug 'tpope/vim-fugitive'
 
+" Navigation
+Plug 'scrooloose/nerdtree'
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " ultisnips engine
 Plug 'SirVer/ultisnips'
 "
