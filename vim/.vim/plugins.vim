@@ -66,6 +66,9 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Dash in vim
+"Plug 'rizzatti/dash.vim'
+
 " ultisnips engine
 Plug 'SirVer/ultisnips'
 "

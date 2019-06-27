@@ -11,7 +11,7 @@ set shell=/bin/bash
 
 " nvim sets utf8 by default, wrap in if because prevents reloading vimrc
 if !has('nvim')
-  set encoding=utf-8
+    set encoding=utf-8
 endif
 
 set t_ut=
@@ -33,13 +33,9 @@ set tabpagemax=50
 
 set sessionoptions-=options
 
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum""]]"
-
 if !has('nvim')
-  set ttyscroll=3
-  set ttymouse=sgr
+    set ttyscroll=3
+    set ttymouse=sgr
 end
 
 set ttyfast " u got a fast terminal
@@ -114,19 +110,27 @@ iab Teh The
 " Scrollbar junk
 set guioptions=aAce
 
+let g:base16_shell_path="$HOME/.config/base16-shell/scripts"
 colorscheme base16-onedark
 
 "Show lines numbers
 set number
 set background=dark
 if has('gui_running')
-  "Using a cool patched font for powerline
-  set guifont=Fira\ Code:h12
-  "set background transparency and solarized style 
-  set t_Co=256
-  autocmd vimenter * wincmd p
+    "Using a cool patched font for powerline
+    set guifont=Fira\ Code:h12
+    "set background transparency and solarized style 
+    autocmd vimenter * wincmd p
 else
-  set mouse=a
+    set mouse=a
+endif
+
+" Fixes issues with TRUECOLOR in tmux in alacritty
+if exists('+termguicolors')
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    " Set termguicolors to enable 24-bit TrueColor
+    set termguicolors
 endif
 
 " Yank text to the OS X clipboard
