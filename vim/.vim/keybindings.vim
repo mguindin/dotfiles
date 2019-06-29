@@ -2,9 +2,13 @@
 " keep <space>w as :w and <space>q as :q
 map <space> <Leader>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>W :w<CR>
 nnoremap <Leader>wq :wq
+nnoremap <Leader>WQ :wq
+nnoremap <Leader>Wq :wq
 nnoremap <Leader>wq! :wq!<CR>
 nnoremap <Leader>q :q
+nnoremap <Leader>Q :q
 nnoremap <Leader>q! :q!<CR>
 
 " Space v
@@ -19,11 +23,6 @@ nnoremap <Leader>- <C-w>s<C-w>j
 " Source vimrc
 nnoremap <Leader>ss :source ~/.vimrc
 
-" Space b
-nmap <Leader>bn    :bnext<CR>
-nmap <Leader>bp    :bprevious<CR>
-
-" Space n
 " Search lines with fzf
 nnoremap <silent> <Leader>n :Lines<CR>
 
@@ -43,13 +42,13 @@ nnoremap <A-x> <C-x>
 nnoremap <Leader>] :tabn<cr>
 nnoremap <Leader>[ :tabp<cr>
 nnoremap <Leader>T :tabe<cr>
-nnoremap <leader>tn :tabn<CR>
-nnoremap <leader>tp :tabp<CR>
+nnoremap <leader>gt :tabn<CR>
+nnoremap <leader>gT :tabp<CR>
 nnoremap <leader>tc :tabclose<CR>
 
 " Buffers
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
+nnoremap <leader>gb :bn<CR>
+nnoremap <leader>gB :bp<CR>
 
 " Windows and Splits
 " easier split navigation
@@ -66,6 +65,24 @@ nmap <C-l> <C-w>l
 " Better up/down line movement
 nnoremap j gj
 nnoremap k gk
+
+" Buffer 
+" next buffer
+nnoremap gb :bnext<CR>
+" previous buffer
+nnoremap gB :bprevious<CR>
+
+" Map backtick to switch between the current and previous file
+nmap \` :e#<CR>
+
+" Map ; to fuzzy search through open buffers
+nmap ; :Buffers<CR>
+
+" Tab management
+" next Tab
+nnoremap gt :tabp<CR>
+" previous Tab
+nnoremap gT :tabn<CR>
 
 " Remap increment as C-g (C-a is used by tmux)
 nnoremap <C-g> <C-a>

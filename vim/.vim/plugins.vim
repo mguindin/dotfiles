@@ -56,6 +56,11 @@ Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
+" tpope
+" Comments
+Plug 'tpope/vim-commentary'
+" Pairings
+Plug 'tpope/vim-unimpaired'
 " Session management
 Plug 'tpope/vim-obsession'
 " Git

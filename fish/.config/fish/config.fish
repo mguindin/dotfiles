@@ -94,21 +94,30 @@ set fish_pager_color_progress cyan
 
 set -g theme_color_scheme terminal2-dark-black
 set -g theme_display_k8s_context no
-set -g theme_display_user no
+set -g theme_display_user ssh
 set -g theme_display_hostname no
 set -g theme_display_cmd_duration yes
 set -g theme_display_ruby no
 set -g theme_display_virtualenv yes
 set -g theme_display_hg no
+set -g theme_display_git yes
+set -g theme_display_git_dirty no
+set -g theme_display_git_untracked no
+set -g theme_display_git_ahead_verbose yes
+set -g theme_display_git_dirty_verbose yes
+set -g theme_display_git_stashed_verbose yes
+set -g theme_display_git_master_branch yes
+set -g theme_git_worktree_support no
 set -g theme_title_display_process yes
 set -g theme_title_display_path yes
 set -g theme_title_display_user yes
 set -g theme_display_user no
 set -g theme_date_format "+%a %H:%M:%S"
-set -g theme_title_use_abbreviated_path no
+set -g theme_title_use_abbreviated_path yes
 set -g theme_nerd_fonts no
 set -g theme_show_exit_status yes
 set -g theme_newline_cursor no
+set -g theme_project_dir_length 1
 
 # Source direnv if available
 if test -d ".envrc"; and command -sq direnv
