@@ -17,11 +17,11 @@ nnoremap <Leader>v <C-w>v<C-w>l
 nnoremap <Leader>\| <C-w>v<C-w>l
 
 " Space s
-""Opens a horizontal split and switches over
+"Opens a horizontal split and switches over
 nnoremap <Leader>s <C-w>s<C-w>j
 nnoremap <Leader>- <C-w>s<C-w>j
-" Source vimrc
-nnoremap <Leader>ss :source ~/.vimrc
+" source vimrc
+nnoremap <Leader>ss :source $HOME/.vim/vimrc<CR>
 
 " Search lines with fzf
 nnoremap <silent> <Leader>n :Lines<CR>

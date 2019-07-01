@@ -14,7 +14,12 @@ if !has('nvim')
     set encoding=utf-8
 endif
 
-set t_ut=
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
@@ -53,7 +58,7 @@ set autowrite
 
 set lazyredraw " redraw only what we need to
 
-""Ever notice a slight lag after typing the leader key + command? This lowers
+"Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
 set timeout timeoutlen=500 ttimeoutlen=0
 
@@ -99,7 +104,7 @@ set smartcase
 
 "Enable code folding
 set foldenable
-"
+
 ""Hide mouse when typing
 set mousehide
 

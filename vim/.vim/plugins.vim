@@ -9,8 +9,9 @@ call plug#begin('~/.vim/plugged')
 
 "-------------------=== Status Bar ===-----------------------------
 Plug 'itchyny/lightline.vim'
-" Plug 'chriskempson/base16-vim'
-Plug 'danielwe/base16-vim'
+
+"-------------------=== Theme ===-----------------------------
+Plug 'chriskempson/base16-vim'
 
 "-------------------=== Basics ===-----------------------------
 " Indent text object
@@ -70,9 +71,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Dash in vim
-"Plug 'rizzatti/dash.vim'
 
 " ultisnips engine
 Plug 'SirVer/ultisnips'
@@ -197,7 +195,7 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>S :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
