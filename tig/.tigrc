@@ -1,0 +1,49 @@
+set main-view = date author id commit-title:graph=yes,refs=yes
+
+# View switching {{{
+bind generic	m	view-main
+bind generic	d	view-diff
+bind generic	l	view-log
+bind generic	t	view-tree
+bind generic	f	view-blob
+bind generic	b	view-blame
+bind generic	r	view-refs
+bind generic	p	view-pager
+bind generic	h	view-help
+bind generic	s	view-status
+bind generic	S	view-status		# Compat binding to avoid going crazy!
+bind generic	c	view-stage
+bind generic	y	view-stash
+bind generic g view-grep
+# }}}
+
+# Cursor navigation {{{
+bind generic	j	move-down
+bind generic	k	move-up
+bind generic	}	move-half-page-down
+bind generic	{	move-half-page-up
+bind generic	<PgDown> move-page-down
+bind generic	<C-D>	move-page-down
+bind generic	<Space>	move-page-down
+bind generic	<PgUp>	move-page-up
+bind generic	<C-U>	move-page-up
+bind generic	-	move-page-up
+bind generic	^	move-first-line
+bind generic    G move-last-line
+# }}}
+
+# Colors {{{
+color cursor black magenta bold
+color title-focus black cyan
+color title-blur black cyan
+color date yellow default
+color author green default
+color main-head magenta default
+color main-tag magenta default
+color stat-staged green default
+color stat-unstaged red default
+color stat-untracked yellow default
+color tree.header white default
+color tree.directory cyan black
+# }}}
+# vim:set sw=4 ts=4 et:
