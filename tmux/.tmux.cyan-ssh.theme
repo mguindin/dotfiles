@@ -2,7 +2,7 @@
 # Created by Jim Myhrberg <contact@jimeh.me>.
 #
 # Inspired by vim-powerline: https://github.com/Lokaltog/powerline
-# User and SSH hostname added by mguindin
+# User and SSH hostname colorization added by mguindin
 #
 # Requires terminal to be using a powerline compatible font, find one here:
 # https://github.com/Lokaltog/powerline-fonts
@@ -14,15 +14,18 @@ set -g status-interval 1
 # Basic status bar colors
 set -g status-style fg=colour240,bg=colour233
 
+# Set host and user color (black if home, red if SSH)
+host_color="#{?#{pane_ssh_connected},colour88,colour232}"
+
 # Left side of status bar
 set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 40
-set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #U #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
+set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=${host_color},bg=colour240] #U #[fg=colour240,bg=colour235]#[fg=colour240,bg=colour235] #I:#P #[fg=colour235,bg=colour233,nobold]"
 
 # Right side of status bar
 set -g status-right-style bg=colour233,fg=colour243
 set -g status-right-length 150
-set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] #(TZ='Universal' date +%%H:%%M:%%S) #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
+set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] #(TZ='Universal' date +%%H:%%M:%%S) #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]#[fg=${host_color},bg=colour245,bold] #H "
 
 # Window status
 set -g window-status-format "  #I:#W#F  "
