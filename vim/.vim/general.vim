@@ -115,7 +115,6 @@ iab Teh The
 " Scrollbar junk
 set guioptions=aAce
 
-let g:base16_shell_path="$HOME/.config/base16-shell/scripts"
 colorscheme base16-onedark
 
 "Show lines numbers
