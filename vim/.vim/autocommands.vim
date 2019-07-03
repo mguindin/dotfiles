@@ -22,7 +22,10 @@ augroup configgroup
 
   " Scala
   autocmd FileType scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
- 
+
+  " Fish
+  autocmd BufNewFile,BufRead fish setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
   " Dockerfile
   autocmd BufNewFile,BufRead Dockerfile* set filetype=Dockerfile expandtab
 

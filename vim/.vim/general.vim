@@ -140,10 +140,19 @@ endif
 " Yank text to the OS X clipboard
 set clipboard=unnamed
 
+" show trailing whitespace chars
+set list
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
+
 " Correct cursor in terminal/tmux
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[0 q"
+
+" Set vim terminal to fish if it exists
+if !empty(glob("/usr/local/bin/fish"))
+    set shell=/usr/local/bin/fish
+endif
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 set spellfile=$HOME/.vim-spell-en.utf-8.add

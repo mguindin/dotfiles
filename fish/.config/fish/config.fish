@@ -54,7 +54,6 @@ end
 
 # Add rust binaries, if available
 if test -d "$HOME/.cargo"
-  source $HOME/.cargo/env
   set -xg PATH $HOME/.cargo/bin $PATH
 end
 
@@ -66,6 +65,7 @@ end
 
 # Add pyenv, if available
 if test -d "$HOME/.pyenv"
+  # set where pyenv is installed
   set -x PYENV_ROOT $HOME/.pyenv
   set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
   # Set virtualenvs to be located in one place
@@ -77,7 +77,7 @@ if test -d "$HOME/.pyenv"
   # Add pyenv root to PATH to access its shims
   set -xg PATH $PYENV_ROOT/bin $PATH
   # load pyenv and virtualenv-init, etc
-  status --is-interactive; and pyenv init - | source; and pyenv virtualenv-init - | source
+  status --is-interactive; and pyenv init - | source
   eval (python -m virtualfish compat_aliases auto_activation)
 end
 
