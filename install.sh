@@ -27,7 +27,7 @@ case "${unameOut}" in
       else
         echo "ubuntu installing with apt-get..."
         # Updated fish
-        sudo apt-add-repository -qq ppa:fish-shell/release-3
+        sudo apt-add-repository -y ppa:fish-shell/release-3
         sudo apt-get update && sudo apt-get -qq install \
           stow fish git automake autoconf libreadline-dev \
           libncurses-dev libssl-dev libyaml-dev \
