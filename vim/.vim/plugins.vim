@@ -52,6 +52,9 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 "-------------------=== Database ===------------------------------
 Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 
+"---------------------=== AWS ===---------------------------------
+Plug 'https://github.com/m-kat/aws-vim'
+
 " Vim/tmux/linux
 "-------------------=== Tools (vim, tmux, linux, etc) ===---------
 Plug 'Raimondi/delimitMate'

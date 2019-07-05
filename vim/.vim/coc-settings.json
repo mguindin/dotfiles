@@ -19,6 +19,11 @@
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
+    },
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
     }
   },
   "python.formatting.provider": "black",
@@ -28,5 +33,6 @@
     ".pyenv",
     ".direnv"
   ],
-  "python.venvPath": "~/.ve"
+  "python.venvPath": "~/.ve",
+  "python.jediEnabled": false
 }
