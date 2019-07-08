@@ -10,20 +10,6 @@ if status --is-interactive
   base16 onedark
 end
 
-switch (uname -a)
-  # This is for WSL
-  case '*Microsoft*'
-    set -xg DOCKER_HOST tcp://127.0.0.1:2375
-  # Linux
-  case '*Linux*'
-    # For ubuntu
-    if test -d "/snap/bin"
-      set -xg PATH /snap/bin $PATH
-    end
-  case '*Darwin*'
-    set -xg GREP_OPTIONS '--color=auto'
-    set -xg GREP_COLOR '3;33'
-end
 
 set -xg GOPATH $HOME/go
 
@@ -122,6 +108,22 @@ set -g theme_project_dir_length 1
 # Source direnv if available
 if test -d ".envrc"; and command -sq direnv
   direnv hook fish | source
+end
+
+switch (uname -a)
+  # This is for WSL
+  case '*Microsoft*'
+    set -xg DOCKER_HOST tcp://127.0.0.1:2375
+  # Linux
+  case '*Linux*'
+    # For ubuntu
+    if test -d "/snap/bin"
+      set -xg PATH /snap/bin $PATH
+    end
+  case '*Darwin*'
+    # Let's use GNU versions of grep, etc instead of macOS's old versions
+    set -xg PATH /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/grep/libexec/gnubin $PATH
+    set -xg GREP_COLOR '3;33'
 end
 
 # asdf (go/scala/python binary manager)

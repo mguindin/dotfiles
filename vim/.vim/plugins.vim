@@ -67,6 +67,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 " Session management
 Plug 'tpope/vim-obsession'
+" 'surroundings' mappings
+Plug 'tpope/vim-surround'
 " Git
 Plug 'tpope/vim-fugitive'
 
