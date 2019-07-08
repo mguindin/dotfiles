@@ -176,19 +176,34 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Buffer maps
 nnoremap <leader>X :bdelete<CR>
 
+" Display git blame in gutter
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
+
+" Simpler bottom line in RO mode
+function! LightlineReadonly()
+  return &readonly && &filetype !=# 'help' ? 'RO' : ''
+endfunction
+
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [  [ 'mode', 'paste' ],
+      \              [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ]  ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent'],
+      \              [ 'fileformat', 'filetype', 'fileencoding' ] ],
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'cocstatus': 'coc#status'
+      \   'cocstatus': 'coc#status',
+      \   'readonly':  'LightlineReadonly'
       \ },
       \ }
-
 
 " Using CocList
 " Show all diagnostics
