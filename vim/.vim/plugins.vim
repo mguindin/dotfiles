@@ -98,7 +98,9 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 
 " neovim
 let g:python_host_prog=$HOME."/.pyenv/versions/neovim/bin/python"
+let g:python_host_skip_check=1
 let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
+let g:python3_host_skip_check=1
 
 " Code completion
 " Smaller updatetime for CursorHold & CursorHoldI
