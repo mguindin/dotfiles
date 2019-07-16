@@ -1,12 +1,12 @@
 # Install fisher
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME $HOME/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
 
 # Base16 Shell
-if status --is-interactive
+if status --is-interactive; and functions -q base16
   base16 onedark
 end
 
@@ -126,7 +126,7 @@ switch (uname -a)
     set -xg GREP_COLOR '3;33'
 end
 
-# asdf (go/scala/python binary manager)
+# asdf (go/scala/ruby/etc binary manager)
 if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
 end
