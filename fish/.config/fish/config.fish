@@ -26,7 +26,7 @@ set -xg LC_COLLATE C
 # Set this to not have issues over VPN running spark locally
 set -xg SPARK_LOCAL_IP 127.0.0.1
 
-# fzf / rg
+# fzf / ripgrep
 set -xg FZF_DEFAULT_COMMAND "rg --files"
 
 # set up PATH
@@ -106,7 +106,7 @@ set -g theme_newline_cursor no
 set -g theme_project_dir_length 1
 
 # Source direnv if available
-if test -d ".envrc"; and command -sq direnv
+if command -sq direnv
   direnv hook fish | source
 end
 
