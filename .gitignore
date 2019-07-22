@@ -48,7 +48,7 @@ zsh/other_aliases/*
 ########
 fish_history
 fishd.*
-fisher.fish 
+fisher.fish
 fish/.config/fish/functions
 fish/.config/fish/conf.d
 fish/.config/fish/completions/aws.fish
@@ -63,6 +63,7 @@ vim/.vim/ftplugin/go/gocomplete.vim
 nvim/.config/nvim/plugged/
 nvim/.config/nvim/autoload/
 plug.vim.old
+*.swp
 
 # GPG #
 #######

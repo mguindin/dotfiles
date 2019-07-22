@@ -48,25 +48,6 @@ if test -d "$HOME/.local/bin"
   set -xg PATH $HOME/.local/bin $PATH
 end
 
-
-# Add pyenv, if available
-if test -d "$HOME/.pyenv"
-  # set where pyenv is installed
-  set -x PYENV_ROOT $HOME/.pyenv
-  set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
-  # Set virtualenvs to be located in one place
-  set -x WORKON_HOME $HOME/.ve
-  # Set virtualenv projects in one place
-  set -x PROJECT_HOME $HOME/p
-  # Make sure virtualfish knows where venvs are
-  set -x VIRTUALFISH_HOME $HOME/.ve
-  # Add pyenv root to PATH to access its shims
-  set -xg PATH $PYENV_ROOT/bin $PATH
-  # load pyenv and virtualenv-init, etc
-  status --is-interactive; and pyenv init - | source
-  eval (python -m virtualfish compat_aliases auto_activation)
-end
-
 # Add machine-specific stuff if machine.fish is present
 if test -d "$HOME/.machine.fish"
   source $HOME/.machine.fish
@@ -124,6 +105,24 @@ switch (uname -a)
     # Let's use GNU versions of grep, etc instead of macOS's old versions
     set -xg PATH /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/grep/libexec/gnubin $PATH
     set -xg GREP_COLOR '3;33'
+end
+
+# Add pyenv, if available
+if test -d "$HOME/.pyenv"
+  # set where pyenv is installed
+  set -x PYENV_ROOT $HOME/.pyenv
+  set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
+  # Set virtualenvs to be located in one place
+  set -x WORKON_HOME $HOME/.ve
+  # Set virtualenv projects in one place
+  set -x PROJECT_HOME $HOME/p
+  # Make sure virtualfish knows where venvs are
+  set -x VIRTUALFISH_HOME $HOME/.ve
+  # Add pyenv root to PATH to access its shims
+  set -xg PATH $PYENV_ROOT/bin $PATH
+  # load pyenv and virtualenv-init, etc
+  status --is-interactive; and pyenv init - | source
+  eval (python -m virtualfish compat_aliases auto_activation)
 end
 
 # asdf (go/scala/ruby/etc binary manager)

@@ -23,6 +23,9 @@ augroup configgroup
   " Scala
   autocmd FileType scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
+  " YAML
+  autocmd FileType yaml,*.yml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
   " Fish
   autocmd BufNewFile,BufRead fish setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 

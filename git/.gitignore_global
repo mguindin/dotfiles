@@ -47,14 +47,15 @@ Thumbs.db
 # vim #
 #######
 [._]*.swp
-#[._]*.s[a-w][a-z]
-#[._]s[a-w][a-z]
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 *~
 **/*.bak
 .metals/
+*.swp
 
 # emacs #
 #########

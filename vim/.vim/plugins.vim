@@ -74,8 +74,10 @@ Plug 'tpope/vim-fugitive'
 
 " Navigation
 Plug 'scrooloose/nerdtree'
-
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
 
 " ultisnips engine
 Plug 'SirVer/ultisnips'
@@ -238,3 +240,6 @@ endfunction
 " FZF Stuff
 nnoremap <leader>t :FZF<CR>
 
+" editorconfig
+" don't interfere with fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
