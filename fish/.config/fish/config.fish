@@ -10,9 +10,10 @@ if status --is-interactive; and functions -q base16
   base16 onedark
 end
 
-
 set -xg GOPATH $HOME/go
 
+# color for less and man
+set -xg MANPAGER 'less -s -M +Gg'
 set -xg LESS '--ignore-case --raw-control-chars'
 set -xg PAGER 'less -R'
 set -xg EDITOR 'vim'
@@ -81,16 +82,18 @@ set -g theme_title_display_user yes
 set -g theme_display_user no
 set -g theme_date_format "+%a %H:%M:%S"
 set -g theme_title_use_abbreviated_path yes
-set -g theme_nerd_fonts no
+set -g theme_nerd_fonts yes
 set -g theme_show_exit_status yes
 set -g theme_newline_cursor no
 set -g theme_project_dir_length 1
+set -g fish_prompt_pwd_dir_length 1
 
 # Source direnv if available
 if command -sq direnv
   direnv hook fish | source
 end
 
+# OS-specific settings
 switch (uname -a)
   # This is for WSL
   case '*Microsoft*'
@@ -111,6 +114,8 @@ end
 if test -d "$HOME/.pyenv"
   # set where pyenv is installed
   set -x PYENV_ROOT $HOME/.pyenv
+  # Disable prompt as it's been removed
+  set -x PYENV_VIRTUALENV_DISABLE_PROMPT 1
   set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
   # Set virtualenvs to be located in one place
   set -x WORKON_HOME $HOME/.ve
