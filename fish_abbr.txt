@@ -7,6 +7,7 @@ abbr -a -U -- dcs 'docker-compose stop'
 abbr -a -U -- dcu 'docker-compose up --build -d'
 abbr -a -U -- dps 'docker ps'
 abbr -a -U -- ds 'docker-compose stop'
+abbr -a -U -- g git
 abbr -a -U -- gcm 'git checkout master'
 abbr -a -U -- gco 'git checkout'
 abbr -a -U -- gd 'git diff'
@@ -14,6 +15,7 @@ abbr -a -U -- gp 'git pull'
 abbr -a -U -- gpm 'git pull origin master'
 abbr -a -U -- gpull 'git pull'
 abbr -a -U -- la 'lsd -la'
+abbr -a -U -- lah 'lsd -lah'
 abbr -a -U -- ll 'lsd -l'
 abbr -a -U -- lrt 'lsd -lrt'
 abbr -a -U -- ls lsd
@@ -27,5 +29,7 @@ abbr -a -U -- t tldr
 abbr -a -U -- ta tn
 abbr -a -U -- tl 'tmux ls'
 abbr -a -U -- vfish 'vim $HOME/.config/fish/config.fish'
+abbr -a -U -- va 'vim $HOMe/.vim/autocommands.vim'
 abbr -a -U -- vg 'vim $HOME/.vim/general.vim'
+abbr -a -U -- vk 'vim $HOME/.vim/keybindings.vim'
 abbr -a -U -- vp 'vim $HOME/.vim/plugins.vim'
