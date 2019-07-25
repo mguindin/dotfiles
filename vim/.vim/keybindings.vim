@@ -66,7 +66,7 @@ nmap <C-l> <C-w>l
 nnoremap j gj
 nnoremap k gk
 
-" Buffer 
+" Buffer
 " next buffer
 nnoremap gb :bnext<CR>
 " previous buffer
@@ -95,6 +95,9 @@ imap jj <esc>
 
 " sudo write
 cmap w!! w !sudo tee > /dev/null %
+
+" save session
+cnoremap s!! mksession! $HOME/.vim/sessions/session<CR>
 
 " Run current line as command
 nnoremap <leader>e :exe getline(line('.'))<cr>
