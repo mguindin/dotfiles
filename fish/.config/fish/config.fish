@@ -160,13 +160,10 @@ if test -d "$HOME/.pyenv"
   set -x WORKON_HOME $HOME/.ve
   # Set virtualenv projects in one place
   set -x PROJECT_HOME $HOME/p
-  # Make sure virtualfish knows where venvs are
-  set -x VIRTUALFISH_HOME $HOME/.ve
   # Add pyenv root to PATH to access its shims
   set -xg PATH $PYENV_ROOT/bin $PATH
   # load pyenv and virtualenv-init, etc
   status --is-interactive; and pyenv init - | source
-  eval (python -m virtualfish compat_aliases auto_activation)
 end
 
 # asdf (go/scala/ruby/etc binary manager)

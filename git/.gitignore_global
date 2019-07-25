@@ -57,6 +57,10 @@ Session.vim
 .metals/
 *.swp
 
+# scala
+.bloop
+.bloop/
+
 # emacs #
 #########
 .ensime
