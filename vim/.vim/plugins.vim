@@ -175,7 +175,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` for fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Buffer maps
 nnoremap <leader>X :bdelete<CR>
@@ -237,8 +237,14 @@ function! s:show_documentation()
   endif
 endfunction
 
-" FZF Stuff
-nnoremap <leader>t :FZF<CR>
+" Fuzzy file finder
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+" Act like Ctrl-P
+nnoremap <c-p> :FZF<cr>
 
 " editorconfig
 " don't interfere with fugitive
