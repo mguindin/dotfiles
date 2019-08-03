@@ -4,6 +4,7 @@
 [submodule "tmux/.tmux/plugins/tpm"]
     path = tmux/.tmux/plugins/tpm
     url = https://github.com/tmux-plugins/tpm
-[submodule "emacs/.emacs.d"]
-	path = emacs/.emacs.d
-	url = https://github.com/hlissner/doom-emacs
+[submodule "spacemacs/.emacs.d"]
+    path = spacemacs/.emacs.d
+    url = https://github.com/syl20bnr/spacemacs
+    ignore = dirty
