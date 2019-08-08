@@ -50,7 +50,7 @@ if test -d "$HOME/.local/bin"
 end
 
 # Add machine-specific stuff if machine.fish is present
-if test -d "$HOME/.machine.fish"
+if test -e "$HOME/.machine.fish"
   source $HOME/.machine.fish
 end
 
