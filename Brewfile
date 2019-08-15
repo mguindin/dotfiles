@@ -9,8 +9,6 @@ tap "railwaycat/emacsmacport"
 tap "rschmitt/heatseeker"
 tap "wagoodman/dive"
 brew "ansifilter"
-brew "apache-spark", link: false
-brew "apache-zeppelin"
 brew "awscli"
 brew "bash"
 brew "bat"
@@ -78,11 +76,13 @@ brew "jesseduffield/lazydocker/lazydocker"
 brew "wagoodman/dive/dive"
 cask "alacritty"
 cask "balenaetcher"
+cask "boostnote"
 cask "dash"
 cask "dbeaver-community"
 cask "dozer"
 cask "emacs-mac-spacemacs-icon"
 cask "firefox"
+cask "hammerspoon"
 cask "insomnia"
 cask "jetbrains-toolbox"
 cask "keybase"
@@ -96,6 +96,8 @@ cask "xquartz"
 cask "zenmap"
 cask "caskroom/fonts/font-firacode-nerd-font"
 cask "railwaycat/emacsmacport/emacs-mac-spacemacs-icon"
+mas "Airmail", id: 918858936
+mas "TickTick", id: 966085870
 mas "Quiver", id: 866773894
 mas "ReadKit", id: 588726889
 mas "Xcode", id: 497799835
