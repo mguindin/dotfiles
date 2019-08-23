@@ -175,11 +175,6 @@ KEYTIMEOUT=1
 export PATH=$HOME/.rvm/gems/ruby-2.2.2/bin:/usr/local/bin:$HOME/.rvm/gems/ruby-2.2.2@global/bin:$HOME/.nvm/versions/node/v4.2.4/bin:$HOME/local/bin:/usr/local/Cellar/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/opt/sm/bin:/opt/sm/pkg/active/bin:/opt/sm/pkg/active/sbin:$GOPATH/bin:/usr/bin:$PATH
 
 export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-# Only set macgpg for Mac
-if [[ "$(uname)" == "Darwin" ]]; then
-  /usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
-fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
