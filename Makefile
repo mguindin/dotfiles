@@ -24,7 +24,7 @@ asdf:
 
 link:
 	for d in */; do \
-		stow --target=${HOME} $$d ; \
+		stow --dotfiles --target=${HOME} $$d ; \
 	done
 
 unlink:
