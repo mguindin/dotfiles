@@ -1,0 +1,9 @@
+[submodule "spacemacs/dot-emacs.d"]
+	path = spacemacs/dot-emacs.d
+	url = https://github.com/syl20bnr/spacemacs
+[submodule "base16-shell/dot-config/base16-shell"]
+	path = base16-shell/dot-config/base16-shell
+	url = https://github.com/chriskempson/base16-shell
+[submodule "tmux/dot-tmux/plugins/tpm"]
+	path = tmux/dot-tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
