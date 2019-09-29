@@ -123,6 +123,7 @@ set smartcase
 
 "Enable code folding
 set foldenable
+set foldmethod=indent
 
 ""Hide mouse when typing
 set mousehide
@@ -142,7 +143,7 @@ set background=dark
 if has('gui_running')
     "Using a cool patched font for powerline
     set guifont=Fira\ Code:h12
-    "set background transparency and solarized style 
+    "set background transparency and style
     autocmd vimenter * wincmd p
 else
     set mouse=a

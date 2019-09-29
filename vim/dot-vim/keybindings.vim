@@ -7,8 +7,8 @@ nnoremap <Leader>wq :wq
 nnoremap <Leader>WQ :wq
 nnoremap <Leader>Wq :wq
 nnoremap <Leader>wq! :wq!<CR>
-nnoremap <Leader>q :q
-nnoremap <Leader>Q :q
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q<CR>
 nnoremap <Leader>q! :q!<CR>
 
 " Space v
@@ -32,7 +32,10 @@ noremap <Leader>yy "+yy
 
 " Space p
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <Leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" TODO: Should check if we're on dev-desktop where we want this removed
+if has('macunix')
+  noremap <Leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+end
 
 " Remap increment and decrement numbers to something that works on macs/linux
 nnoremap <A-a> <C-a>

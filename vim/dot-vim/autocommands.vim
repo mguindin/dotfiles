@@ -62,4 +62,6 @@ augroup configgroup
     \ exe "normal! ggI"
 
   autocmd CursorHoldI,CursorMovedI * silent! call CocActionAsync('showSignatureHelp')
+  " Keep all folds open when a file is opened
+  autocmd BufRead * normal zR
 augroup END

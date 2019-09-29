@@ -26,7 +26,7 @@ Plug 'junegunn/fzf.vim'
 
 "-------------------=== Languages ===----------------------
 "-------------------=== Code completion ===-----------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release' }
 
 "-------------------=== Python ===--------------------------------"
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile', 'for': 'python'}
@@ -55,10 +55,16 @@ Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
 "---------------------=== AWS ===---------------------------------
 Plug 'https://github.com/m-kat/aws-vim'
 
+"---------------------=== fish ===--------------------------------
+Plug 'dag/vim-fish', { 'for': 'fish' }
+
 " Vim/tmux/linux
 "-------------------=== Tools (vim, tmux, linux, etc) ===---------
 Plug 'Raimondi/delimitMate'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
+
+" Dash
+Plug 'rizzatti/dash.vim'
 
 " tpope
 " Comments
@@ -99,10 +105,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 
 " neovim
-let g:python_host_prog=$HOME."/.pyenv/versions/neovim/bin/python"
-let g:python_host_skip_check=1
-let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
-let g:python3_host_skip_check=1
+if executable($HOME."/.pyenv/versions/neovim/bin/python")
+  let g:python_host_prog=$HOME."/.pyenv/versions/neovim/bin/python"
+  let g:python_host_skip_check=1
+elseif executable("python2")
+  let g:python_host_prog="python2"
+  let g:python_host_skip_check=1
+endif
+
+if executable($HOME."/.pyenv/versions/neovim3/bin/python")
+  let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
+  let g:python3_host_skip_check=1
+elseif executable("python3")
+  let g:python3_host_prog="python3"
+  let g:python3_host_skip_check=1
+endif
 
 " Code completion
 " Smaller updatetime for CursorHold & CursorHoldI
@@ -209,24 +226,6 @@ let g:lightline = {
       \ },
       \ }
 
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>E  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>S :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>l  :<C-u>CocListResume<CR>
-
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -237,14 +236,35 @@ function! s:show_documentation()
   endif
 endfunction
 
+" FZF
 " Fuzzy file finder
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-v': 'vsplit'
       \ }
-" Act like Ctrl-P
-nnoremap <c-p> :FZF<cr>
+
+" FZF find files
+nnoremap <Leader>f :FZF<cr>
+
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+" FZF select buffer
+nnoremap <silent> <Leader><Enter> :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
 
 " editorconfig
 " don't interfere with fugitive

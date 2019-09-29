@@ -1,0 +1,3 @@
+set-option -g default-shell /apollo/env/envImprovement/bin/fish
+bind -n M-F11 set -qg status-bg colour88
+bind -n M-F12 set -qg status-bg colour233
