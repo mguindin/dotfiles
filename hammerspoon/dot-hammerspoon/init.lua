@@ -34,3 +34,27 @@ end
 
 -- Start It
 watchEvents()
+
+vim = hs.loadSpoon('VimMode')
+
+-- Basic key binding to ctrl+;
+-- You can choose any key binding you want here, see:
+--   https://www.hammerspoon.org/docs/hs.hotkey.html#bind
+
+hs.hotkey.bind({'ctrl'}, ';', function()
+  vim:enter()
+end)
+
+vim:enterWithSequence('jk')
+vim:enterWithSequence('jj')
+vim:shouldDimScreenInNormalMode(true)
+-- sometimes you need to check Activity Monitor to get the app's
+-- real name
+vim:disableForApp('Code')
+vim:disableForApp('iTerm')
+vim:disableForApp('MacVim')
+vim:disableForApp('Alacritty')
+vim:disableForApp('Kitty')
+vim:disableForApp('Terminal')
+vim:disableForApp('PyCharm')
+vim:disableForApp('Intellij IDEA')

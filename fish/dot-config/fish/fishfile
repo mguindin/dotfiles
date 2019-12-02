@@ -1,8 +1,8 @@
-oh-my-fish/plugin-bang-bang
-oh-my-fish/theme-bobthefish
 mguindin/fish_functions
+edc/bass
+smh/base16-shell-fish
 jethrokuan/z
 jethrokuan/fzf
 franciscolourenco/done
-smh/base16-shell-fish
-edc/bass
+rafaelrinaldi/pure
+danhper/fish-ssh-agent

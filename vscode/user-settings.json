@@ -6,7 +6,7 @@
     //editor
     "editor.fontLigatures": true,
     "editor.fontWeight": "600",
-    "editor.fontFamily": "Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "FuraCode Nerd Font, Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
     "editor.renderWhitespace": "boundary",
 
     //vim

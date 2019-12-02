@@ -12,11 +12,17 @@ end
 
 set -xg GOPATH $HOME/go
 
+# Set to term that will always be available
+set -xg TERM screen-256color
+
 # color for less and man
 set -xg MANPAGER 'less -s -M +Gg'
 set -xg LESS '--ignore-case --raw-control-chars'
 set -xg PAGER 'less -R'
 set -xg EDITOR 'vim'
+
+# vi-mode
+fish_vi_key_bindings
 
 # Set language to en_US
 set -xg LANG en_US.UTF-8
@@ -64,32 +70,9 @@ end
 set -g fish_user
 set fish_pager_color_progress cyan
 
-set -g theme_color_scheme terminal2-dark-black
-set -g theme_display_k8s_context no
-set -g theme_display_user ssh
-set -g theme_display_hostname no
-set -g theme_display_cmd_duration yes
-set -g theme_display_ruby no
-set -g theme_display_virtualenv yes
-set -g theme_display_hg no
-set -g theme_display_git yes
-set -g theme_display_git_dirty yes
-set -g theme_display_git_untracked yes
-set -g theme_display_git_ahead_verbose no
-set -g theme_display_git_dirty_verbose no
-set -g theme_display_git_stashed_verbose no
-set -g theme_display_git_master_branch no
-set -g theme_git_worktree_support no
-set -g theme_title_display_process yes
-set -g theme_title_display_path yes
-set -g theme_title_display_user yes
-set -g theme_date_format "+%a %H:%M:%S"
-set -g theme_title_use_abbreviated_path yes
-set -g theme_nerd_fonts yes
-set -g theme_show_exit_status yes
-set -g theme_newline_cursor no
-set -g theme_project_dir_length 1
-set -g fish_prompt_pwd_dir_length 1
+# Fish prompt (pure)
+set -g pure_color_git_dirty $pure_color_danger
+set -g pure_show_jobs true
 
 # Source direnv if available
 if command -sq direnv
@@ -130,7 +113,16 @@ if test -d "$HOME/.pyenv"
   status --is-interactive; and pyenv init - | source
 end
 
+# Add machine-specific stuff if machine.fish is present
+if test -e "$HOME/.machine.fish"
+  source $HOME/.machine.fish
+end
+
 # asdf (go/scala/ruby/etc binary manager)
 if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
+end
+
+if command -sq kitty
+  kitty + complete setup fish | source
 end

@@ -27,12 +27,13 @@
     }
   },
   "python.formatting.provider": "black",
+  "python.setLinter": "flake8",
   "python.venvFolders": [
-    ".ve",
-    "envs",
-    ".pyenv",
-    ".direnv"
-  ],
+      ".ve",
+        "envs",
+      ".pyenv",
+      ".direnv"
+    ],
   "python.venvPath": "~/.ve",
   "python.jediEnabled": false
 }

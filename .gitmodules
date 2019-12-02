@@ -7,3 +7,6 @@
 [submodule "tmux/dot-tmux/plugins/tpm"]
 	path = tmux/dot-tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "hammerspoon/dot-hammerspoon/Spoons/VimMode.spoon"]
+	path = hammerspoon/dot-hammerspoon/Spoons/VimMode.spoon
+	url = https://github.com/dbalatero/VimMode.spoon

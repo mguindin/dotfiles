@@ -59,7 +59,7 @@ set sessionoptions-=options
 
 if !has('nvim')
     set ttyscroll=3
-    set ttymouse=sgr
+    set ttymouse=xterm2
 end
 
 set ttyfast " u got a fast terminal
