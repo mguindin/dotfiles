@@ -16,8 +16,6 @@ vim
   :disableForApp('Terminal')
   :disableForApp('PyCharm')
   :disableForApp('Intellij IDEA')
-  :enterWithSequence('jk')
-  :enterWithSequence('jj')
   :shouldDimScreenInNormalMode(true)
 
 -- Basic key binding to ctrl+;

@@ -70,10 +70,6 @@ end
 set -g fish_user
 set fish_pager_color_progress cyan
 
-# Fish prompt (pure)
-set -g pure_color_git_dirty $pure_color_danger
-set -g pure_show_jobs true
-
 # Source direnv if available
 if command -sq direnv
   direnv hook fish | source
@@ -126,3 +122,6 @@ end
 if command -sq kitty
   kitty + complete setup fish | source
 end
+
+# starship fish prompt
+starship init fish | source
