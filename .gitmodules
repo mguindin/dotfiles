@@ -10,3 +10,4 @@
 [submodule "hammerspoon/dot-hammerspoon/Spoons/VimMode.spoon"]
 	path = hammerspoon/dot-hammerspoon/Spoons/VimMode.spoon
 	url = https://github.com/dbalatero/VimMode.spoon
+	branch = vim-mode-v2
