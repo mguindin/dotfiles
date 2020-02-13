@@ -1,1 +1,9 @@
-source ~/.vimrc
+source $HOME/.vim/vimrc
+
+" Specific changes for IDEA for window/panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nmap <leader>v :vsplit<cr>
+nmap <leader>h :split<cr>

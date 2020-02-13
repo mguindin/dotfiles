@@ -1,17 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
-env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
-
 # Window dimensions in character columns and lines
 # (changes require restart)
 window:
@@ -36,8 +24,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
 
   # Window decorations
   #
@@ -93,22 +81,22 @@ tabspaces: 8
 font:
   # The normal (roman) font face to use.
   normal:
-    family: FuraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
 
     # Style can be specified to pick a specific face.
     #style: Regular
 
   # The bold font face
   bold:
-    family: FuraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     # Style can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # The italic font face
   italic:
-    family: FuraCode Nerd Font
+    family: JetBrainsMono Nerd Font Mono
     # Style can be specified to pick a specific face.
-    #style: Italic
+    style: Italic
 
   # Point size of the font
   size: 13.0
@@ -130,7 +118,7 @@ font:
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`
-  use_thin_strokes: false
+  use_thin_strokes: true
 
 # Should display the render timer
 debug:
@@ -452,6 +440,7 @@ key_bindings:
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: H,        mods: Alt,     chars: "\x1bh"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+  - { key: S,        mods: Alt,     chars: "\x1bs"                       }
   - { key: LBracket, mods: Command, chars: "\x1bl"                       }
   - { key: RBracket, mods: Command, chars: "\x1bh"                       }
   - { key: Add,      mods: Command, action: IncreaseFontSize             }

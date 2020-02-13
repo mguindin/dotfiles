@@ -83,7 +83,9 @@ cask "dash"
 cask "dbeaver-community"
 cask "dozer"
 cask "emacs-mac-spacemacs-icon"
-cask "firefox"
+cask "firefox-developer-edition"
+cask "font-firacode-nerd-font"
+cask "font-jetbrains-mono"
 cask "hammerspoon"
 cask "insomnia"
 cask "jetbrains-toolbox"
@@ -99,8 +101,6 @@ cask "zenmap"
 cask "caskroom/fonts/font-firacode-nerd-font"
 cask "railwaycat/emacsmacport/emacs-mac-spacemacs-icon"
 mas "Airmail", id: 918858936
-mas "TickTick", id: 966085870
-mas "Quiver", id: 866773894
 mas "ReadKit", id: 588726889
 mas "Xcode", id: 497799835
 mas "ToothFairy", id: 1191449274
