@@ -5,8 +5,8 @@
 
     //editor
     "editor.fontLigatures": true,
+    "editor.fontFamily": "JetBrainsMono Nerd Font, FuraCode Nerd Font, Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontWeight": "600",
-    "editor.fontFamily": "FuraCode Nerd Font, Fira Code, Inconsolata-dz for Powerline, Menlo, Monaco, 'Courier New', monospace",
     "editor.renderWhitespace": "boundary",
 
     //vim
@@ -20,6 +20,10 @@
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["j", "k"],
             "after": ["<Esc>"]
         }
     ],
@@ -150,5 +154,12 @@
     "python.pythonPath": "~/.pyenv/shims/python3",
     "telemetry.enableTelemetry": false,
     "files.autoGuessEncoding": true,
-    "files.useExperimentalFileWatcher": true,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-apple-darwin",
+        "nightlyToolchain": "nightly-x86_64-apple-darwin"
+    },
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    }
 }

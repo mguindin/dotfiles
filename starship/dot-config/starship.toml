@@ -1,0 +1,34 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# AWS
+[aws]
+style = "bold orange"
+symbol = "🅰 "
+displayed_items = "profile"
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[time]
+style = "bold green"
+disabled = true
+format = "🕙[ %T ]"
+
+[directory]
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+
+[git_status]
+renamed.style = "yellow"
+staged.value = "+"
+staged.style = "green"
+stashed.disabled = true
+

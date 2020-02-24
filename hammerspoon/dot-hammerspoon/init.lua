@@ -7,6 +7,7 @@ local vim = VimMode:new()
 
 vim
   :disableForApp('Code')
+  :disableForApp('VSCodium')
   :disableForApp('MacVim')
   :disableForApp('zoom.us')
   :disableForApp('iTerm')
@@ -17,10 +18,9 @@ vim
   :disableForApp('PyCharm')
   :disableForApp('Intellij IDEA')
   :shouldDimScreenInNormalMode(true)
+  :enterWithSequence('jk')
+  :bindHotKeys({ enter = {{'ctrl'}, ';'} })
 
 -- Basic key binding to ctrl+;
 -- You can choose any key binding you want here, see:
 --   https://www.hammerspoon.org/docs/hs.hotkey.html#bind
-
-vim:bindHotKeys({ enter = {{'ctrl'}, ';'} })
-

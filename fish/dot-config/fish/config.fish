@@ -1,13 +1,8 @@
 set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME $HOME/.config
 # Install fisher
 if not functions -q fisher
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
-
-# Base16 Shell
-if status --is-interactive; and functions -q base16
-  base16 onedark
+  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+  fish -c fisher
 end
 
 set -xg GOPATH $HOME/go
@@ -30,7 +25,7 @@ set -xg LC_CTYPE "en_US.UTF-8"
 set -xg LC_MESSAGES "en_US.UTF-8"
 set -xg LC_COLLATE C
 
-# Set this to not have issues over VPN running spark locally
+# Set this to not have issues over VPN running apache-spark locally
 set -xg SPARK_LOCAL_IP 127.0.0.1
 
 # fzf / ripgrep
@@ -60,8 +55,6 @@ if test -e "$HOME/.machine.fish"
   source $HOME/.machine.fish
 end
 
-set -xg MANPATH /usr/local/opt/coreutils/libexec/gnuman /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
-
 # global abbreviations (faster than -U universal)
 if status --is-interactive
   source $XDG_CONFIG_HOME/fish/abbr.fish
@@ -89,6 +82,9 @@ switch (uname -a)
   case '*Darwin*'
     # Let's use GNU versions of grep, etc instead of macOS's old versions
     set -xg PATH /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/grep/libexec/gnubin $PATH
+    set -xg MANPATH /usr/local/opt/coreutils/libexec/gnuman /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
+    # enable framework only works on macOS
+    set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
     set -xg GREP_COLOR '3;33'
 end
 
@@ -98,7 +94,6 @@ if test -d "$HOME/.pyenv"
   set -x PYENV_ROOT $HOME/.pyenv
   # Disable prompt as it's been removed
   set -x PYENV_VIRTUALENV_DISABLE_PROMPT 1
-  set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
   # Set virtualenvs to be located in one place
   set -x WORKON_HOME $HOME/.ve
   # Set virtualenv projects in one place
@@ -109,14 +104,14 @@ if test -d "$HOME/.pyenv"
   status --is-interactive; and pyenv init - | source
 end
 
-# Add machine-specific stuff if machine.fish is present
-if test -e "$HOME/.machine.fish"
-  source $HOME/.machine.fish
-end
-
 # asdf (go/scala/ruby/etc binary manager)
 if test -d "$HOME/.asdf"
   source ~/.asdf/asdf.fish
+end
+
+# Add machine-specific stuff if machine.fish is present
+if test -e "$HOME/.machine.fish"
+  source $HOME/.machine.fish
 end
 
 if command -sq kitty

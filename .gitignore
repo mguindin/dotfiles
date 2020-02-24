@@ -49,19 +49,22 @@ zsh/other_aliases/*
 fish_history
 fishd.*
 fisher.fish
-fish/.config/fish/functions
-fish/.config/fish/conf.d
-fish/.config/fish/completions/aws.fish
-fish/.config/fish/fish_variables
+fish/dot-config/fish/functions
+fish/dot-config/fish/conf.d
+fish/dot-config/fish/completions/aws.fish
+fish/dot-config/fish/fish_variables
 
 # vim #
 #######
-vim/.vim/plugged
-vim/.vim/autoload/*
-vim/.vim/sessions/
-vim/.vim/ftplugin/go/gocomplete.vim
-nvim/.config/nvim/plugged/
-nvim/.config/nvim/autoload/
+vim/dot-vim/plugged
+vim/dot-vim/autoload/*
+vim/dot-vim/undo/*
+vim/dot-vim/backup/*
+vim/dot-vim/wap/*
+vim/dot-vim/sessions/
+vim/dot-vim/ftplugin/go/gocomplete.vim
+nvim/dot-config/nvim/plugged/
+nvim/dot-config/nvim/autoload/
 plug.vim.old
 *.swp
 
@@ -70,12 +73,12 @@ plug.vim.old
 *.key
 *.gpg
 *.kbx
-gnupg/.gnupg/crls.d/
-gnupg/.gnupg/random_seed
+gnupg/dot-gnupg/crls.d/
+gnupg/dot-gnupg/random_seed
 
 # Karabiner-elements #
-karabiner/.config/karabiner/automatic_backups/
+karabiner/dot-config/karabiner/automatic_backups/
 
 # tmux #
 #######
-tmux/.tmux/plugins
+tmux/dot-tmux/plugins
