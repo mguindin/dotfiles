@@ -11,3 +11,6 @@
 	path = hammerspoon/dot-hammerspoon/Spoons/VimMode.spoon
 	url = https://github.com/dbalatero/VimMode.spoon
 	branch = vim-mode-v2
+[submodule "hammerspoon/dot-hammerspoon/Lunette"]
+	path = hammerspoon/dot-hammerspoon/Lunette
+	url = https://github.com/scottwhudson/Lunette/

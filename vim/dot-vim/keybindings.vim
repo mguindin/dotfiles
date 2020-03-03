@@ -93,8 +93,9 @@ nnoremap <C-g> <C-a>
 " NERDTree
 map <C-t> :NERDTreeToggle<CR>
 
-"Map escape key to jj -- much faster
+"Map escape key to jj and jk -- much faster
 imap jj <esc>
+imap jk <esc>
 
 " sudo write
 cmap w!! w !sudo tee > /dev/null %
