@@ -1,8 +1,10 @@
 # This is Git's per-user configuration file.
-[includeIf "~/stuff/*"]
-  path = .gitconfig-personal
-[includeIf "~/p/*"]
-  path = .gitconfig-work
+[user]
+  name = Matt Guindin
+  email = matt@guindin.com
+  signingkey = 32BFAB18833BFED3
+[github]
+  user = mguindin
 [push]
   default = tracking
 [core]
@@ -68,3 +70,5 @@
   patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
   allowed = AKIAIOSFODNN7EXAMPLE
   allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[gpg]
+	program = gpg

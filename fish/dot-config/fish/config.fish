@@ -86,6 +86,8 @@ switch (uname -a)
     # enable framework only works on macOS
     set -x PYTHON_CONFIGURE_OPTS "--enable-framework"
     set -xg GREP_COLOR '3;33'
+    # GPG for terminal use
+    set -xg GPG_TTY (tty)
 end
 
 # Add pyenv, if available

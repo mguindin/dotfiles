@@ -137,8 +137,8 @@ set guioptions=aAce
 
 colorscheme base16-onedark
 
-"Show lines numbers
-set number
+"Show relative line numbers
+set nu rnu
 set background=dark
 if has('gui_running')
     "Using a cool patched font for powerline
