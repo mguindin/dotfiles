@@ -82,7 +82,7 @@ brew "yarn"
 brew "zlib"
 brew "zsh"
 brew "burntsushi/ripgrep/ripgrep-bin"
-brew "denisidoro/tools/navi", args: ["HEAD"]
+brew "denisidoro/tools/navi"
 brew "isacikgoz/gitin/gitin"
 brew "jesseduffield/lazydocker/lazydocker"
 brew "wagoodman/dive/dive"
@@ -107,6 +107,7 @@ cask "nightowl"
 cask "quickhash"
 cask "riot"
 cask "signal"
+cask "taskwarrior-pomodoro"
 cask "wireshark"
 cask "xquartz"
 cask "zenmap"
@@ -114,8 +115,10 @@ cask "railwaycat/emacsmacport/emacs-mac-spacemacs-icon"
 mas "Airmail", id: 918858936
 mas "Kindle", id: 405399194
 mas "Patterns", id: 429449079
+mas "Quiver", id: 866773894
 mas "ReadKit", id: 588726889
 mas "Save to Pocket", id: 1477385213
 mas "ToothFairy", id: 1191449274
 mas "Vimari", id: 1480933944
+mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835

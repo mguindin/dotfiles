@@ -28,6 +28,9 @@
   old = red bold
   new = green bold
 [alias]
+  br = branch
+  df = diff
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
@@ -39,6 +42,7 @@
   dl = "!git ll -1"
   dlc = diff --cached HEAD^
   co = checkout
+  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
   s = status -v
   c = commit -v
   graph = log --graph --decorate --all

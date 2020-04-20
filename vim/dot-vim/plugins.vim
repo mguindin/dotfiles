@@ -82,6 +82,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Bracketed paste mode support
+Plug 'ConradIrwin/vim-bracketed-paste'
+
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
