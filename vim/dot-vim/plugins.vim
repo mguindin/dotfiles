@@ -2,7 +2,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -11,20 +11,20 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 
 "-------------------=== Theme ===-----------------------------
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
+Plug 'junegunn/seoul256.vim'
 
 "-------------------=== Basics ===-----------------------------
 " Indent text object
 Plug 'michaeljsmith/vim-indent-object'
-
-" Yank history navigation
-Plug 'vim-scripts/YankRing.vim'
 
 " FZF / Ctrlp for file navigation
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "-------------------=== Languages ===----------------------
+Plug 'sheerun/vim-polyglot'
+
 "-------------------=== Code completion ===-----------------------
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release' }
 
@@ -34,14 +34,8 @@ Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile', 'for': 'pyt
 "-------------------=== Java ===--------------------------------"
 Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile', 'for': 'java'}
 
-"-------------------=== Scala ===--------------------------
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-
 "-------------------=== Rust ===---------------------------
 Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile', 'for': 'rust'}
-
-"-------------------=== Go ===-----------------------------
-Plug 'fatih/vim-go', { 'for': 'go' }
 
 "-------------------=== Git ===--------------------------------"
 Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
@@ -49,22 +43,15 @@ Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
 "-------------------=== Yaml ===--------------------------------"
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 
-"-------------------=== Database ===------------------------------
-Plug 'lifepillar/pgsql.vim', { 'for': 'sql' }
-
 "---------------------=== AWS ===---------------------------------
 Plug 'https://github.com/m-kat/aws-vim'
-
-"---------------------=== fish ===--------------------------------
-Plug 'dag/vim-fish', { 'for': 'fish' }
 
 " Vim/tmux/linux
 "-------------------=== Tools (vim, tmux, linux, etc) ===---------
 Plug 'Raimondi/delimitMate'
-Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 
-" Dash
-Plug 'rizzatti/dash.vim'
+" Tmux-vim seamless navigation
+Plug 'sunaku/tmux-navigate'
 
 " tpope
 " Comments
@@ -106,23 +93,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
-
-" neovim
-if executable($HOME."/.pyenv/versions/neovim/bin/python")
-  let g:python_host_prog=$HOME."/.pyenv/versions/neovim/bin/python"
-  let g:python_host_skip_check=1
-elseif executable("python2")
-  let g:python_host_prog="python2"
-  let g:python_host_skip_check=1
-endif
-
-if executable($HOME."/.pyenv/versions/neovim3/bin/python")
-  let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
-  let g:python3_host_skip_check=1
-elseif executable("python3")
-  let g:python3_host_prog="python3"
-  let g:python3_host_skip_check=1
-endif
 
 " Code completion
 " Smaller updatetime for CursorHold & CursorHoldI
@@ -214,7 +184,7 @@ endfunction
 
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [  [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ]  ],

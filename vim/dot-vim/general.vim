@@ -1,24 +1,33 @@
 " -- general settings
+"
 " Required for operations modifying multiple buffers like rename.
 set hidden
+
 " Don't show --NORMAL-- or --INSERT--
 set noshowmode
+
 " Display lightline
 set laststatus=2
+
 " fix problems with uncommon shells (fish, xonsh) and plugins running commands
 " (neomake, ...)
 set shell=/bin/bash
 
-" nvim sets utf8 by default, wrap in if because prevents reloading vimrc
 if !has('nvim')
-    set encoding=utf-8
+  " nvim sets utf8 by default, wrap in if because prevents reloading vimrc
+  set encoding=utf-8
+  set ttyscroll=3
+  set ttymouse=xterm2
+else
+  " neovim
+  if executable($HOME."/.pyenv/versions/neovim3/bin/python")
+    let g:python3_host_prog=$HOME."/.pyenv/versions/neovim3/bin/python"
+    let g:python3_host_skip_check=1
+  elseif executable("python3")
+    let g:python3_host_prog="python3"
+    let g:python3_host_skip_check=1
 endif
 
-if &term =~ '256color'
-    " disable Background Color Erase (BCE) so that color schemes
-    " render properly when inside 256-color tmux and GNU screen.
-    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-    set t_ut=
 endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
@@ -43,34 +52,21 @@ set nobackup
 set backupcopy=auto
 " patch required to honor double slash at end
 if has("patch-8.1.0251")
-	" consolidate the writebackups -- not a big
-	" deal either way, since they usually get deleted
-	set backupdir^=~/.vim/backup//
+  " consolidate the writebackups -- not a big
+  " deal either way, since they usually get deleted
+  set backupdir^=~/.vim/backup//
 end
 
 " persist the undo tree for each file
 set undofile
 set undodir^=~/.vim/undo//
 
-set history=1000
-set tabpagemax=50
-
-set sessionoptions-=options
-
-if !has('nvim')
-    set ttyscroll=3
-    set ttymouse=xterm2
-end
-
-set ttyfast " u got a fast terminal
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 "Split windows below the current window.
 set splitbelow
 set splitright
 
-" Set to auto read when a file is changed from the outside
-set autoread
 "
 "Write the old file out when switching between files.
 set autowrite
@@ -85,7 +81,6 @@ set timeout timeoutlen=500 ttimeoutlen=0
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
-" Colors and fonts
 syntax enable
 
 " Softtabs, 2 spaces
@@ -93,10 +88,7 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 set shiftround
-set expandtab " tabs are spaces
-
-set autoindent
-filetype plugin indent on " load filetype-specific indent files
+set expandtab
 
 " Enable completion window
 set completeopt+=preview
@@ -135,26 +127,27 @@ iab Teh The
 " Scrollbar junk
 set guioptions=aAce
 
-colorscheme base16-onedark
+" Colors and fonts
+" colorscheme (Seoul-256)
+let g:seoul256_background = 235
+let g:seoul256_light_background = 253
+colo seoul256
 
 "Show relative line numbers
 set nu rnu
-set background=dark
+
 if has('gui_running')
-    "Using a cool patched font for powerline
-    set guifont=Fira\ Code:h12
-    "set background transparency and style
-    autocmd vimenter * wincmd p
+  "Using a cool patched font for powerline
+  set guifont=JetBrainsMono\ Nerd\ Font\ Regular:h13
+  "set background transparency and style
+  autocmd vimenter * wincmd p
 else
-    set mouse=a
+  set mouse=a
 endif
 
-" Fixes issues with TRUECOLOR in tmux in alacritty
-if exists('+termguicolors')
-    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-    " Set termguicolors to enable 24-bit TrueColor
-    set termguicolors
+" Setting truecolor https://github.com/tmux/tmux/issues/1246
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 " Yank text to the OS X clipboard
@@ -168,11 +161,6 @@ set listchars=tab:>-,trail:.,extends:#,nbsp:.
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[0 q"
-
-" Set vim terminal to fish if it exists
-if !empty(glob("/usr/local/bin/fish"))
-    set shell=/usr/local/bin/fish
-endif
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 set spellfile=$HOME/.vim-spell-en.utf-8.add
