@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 
 "-------------------=== Theme ===-----------------------------
-"Plug 'chriskempson/base16-vim'
 Plug 'junegunn/seoul256.vim'
 
 "-------------------=== Basics ===-----------------------------
