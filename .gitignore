@@ -76,9 +76,14 @@ plug.vim.old
 gnupg/dot-gnupg/crls.d/
 gnupg/dot-gnupg/random_seed
 
+# hammerspoon #
+###############
+hammerspoon/dot-hammerspoon/Spoons/ShiftIt.spoon
+
 # Karabiner-elements #
 karabiner/dot-config/karabiner/automatic_backups/
 
 # tmux #
 #######
 tmux/dot-tmux/plugins
+tmux/dot-tmux/resurrect

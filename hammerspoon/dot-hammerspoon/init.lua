@@ -3,25 +3,28 @@
 local VimMode = hs.loadSpoon('VimMode')
 local vim = VimMode:new()
 
+hs.loadSpoon("SpoonInstall")
+
+spoon.SpoonInstall.repos.ShiftIt = {
+   url = "https://github.com/peterklijn/hammerspoon-shiftit",
+   desc = "ShiftIt spoon repository",
+   branch = "master",
+}
+
+spoon.SpoonInstall:andUse("ShiftIt", { repo = "ShiftIt" })
+
 hs.loadSpoon("ShiftIt")
 spoon.ShiftIt:bindHotkeys({})
 spoon.ShiftIt:bindHotkeys({
   left = {{ 'alt', 'cmd' }, 'left' },
   right = {{ 'alt', 'cmd' }, 'right' },
-  up = {{ 'ctrl', 'alt', 'cmd' }, 'up' },
-  down = {{ 'ctrl', 'alt', 'cmd' }, 'down' },
-  upleft = {{ 'ctrl', 'alt', 'cmd' }, '1' },
-  upright = {{ 'ctrl', 'alt', 'cmd' }, '2' },
-  botleft = {{ 'ctrl', 'alt', 'cmd' }, '3' },
-  botright = {{ 'ctrl', 'alt', 'cmd' }, '4' },
-  maximum = {{ 'alt', 'cmd' }, 'f' },
-  toggleFullScreen = {{ 'ctrl', 'alt', 'cmd' }, 'f' },
-  toggleZoom = {{ 'ctrl', 'alt', 'cmd' }, 'z' },
-  center = {{ 'ctrl', 'alt', 'cmd' }, 'c' },
-  nextScreen = {{ 'ctrl', 'alt', 'cmd' }, 'n' },
-  previousScreen = {{ 'ctrl', 'alt', 'cmd' }, 'p' },
-  resizeOut = {{ 'ctrl', 'alt', 'cmd' }, '=' },
-  resizeIn = {{ 'ctrl', 'alt', 'cmd' }, '-' }
+  toggleFullScreen = {{ 'alt', 'cmd' }, 'f' },
+  toggleZoom = {{ 'alt', 'cmd' }, 'z' },
+  center = {{ 'alt', 'cmd' }, 'c' },
+  nextScreen = {{ 'alt', 'cmd' }, 'n' },
+  previousScreen = {{ 'alt', 'cmd' }, 'p' },
+  resizeOut = {{ 'alt', 'cmd' }, '=' },
+  resizeIn = {{ 'alt', 'cmd' }, '-' }
 });
 
 vim
@@ -35,6 +38,7 @@ vim
   :disableForApp('kitty')
   :disableForApp('Terminal')
   :disableForApp('Quiver')
+  :disableForApp('Joplin')
   :disableForApp('PyCharm')
   :disableForApp('Intellij IDEA')
   :shouldDimScreenInNormalMode(true)

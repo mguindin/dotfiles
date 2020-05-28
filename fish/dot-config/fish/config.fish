@@ -5,8 +5,6 @@ if not functions -q fisher
   fish -c fisher
 end
 
-set -xg TERMINFO $HOME/.terminfo
-set -xg TERM xterm-256color
 # color for less and man
 set -xg MANPAGER 'less -s -M +Gg'
 set -xg LESS '--ignore-case --raw-control-chars'
@@ -107,11 +105,9 @@ switch (uname -a)
   case '*Linux*'
     set -xg OSTYPE 'Linux'
     set -xg TERMINFO /usr/share/terminfo
-    set -xg TERM xterm-24
   case '*Darwin*'
     set -xg OSTYPE 'Darwin'
     set -xg TERMINFO $HOME/.terminfo
-    set -xg TERM xterm-24bit
     # Let's use GNU versions of grep, etc instead of macOS's old versions
     set -xg PATH /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/grep/libexec/gnubin $PATH
     set -xg MANPATH /usr/local/opt/coreutils/libexec/gnuman /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
@@ -150,8 +146,8 @@ if test -e "$HOME/.machine.fish"
   source $HOME/.machine.fish
 end
 
+# source kitty config if we're using kitty terminal
 if command -sq kitty
-  set -xg TERM xterm-kitty
   kitty + complete setup fish | source
 end
 
