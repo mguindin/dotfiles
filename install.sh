@@ -74,7 +74,7 @@ case "${unameOut}" in
       defaults write com.apple.finder ShowStatusBar -bool true #Show status Bar
 
       echo "Installing macOS SDK Headers (necessary for building certain tools)"
-      sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+      sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.15.pkg -target /
       ;;
 esac
 

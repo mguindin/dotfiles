@@ -1,8 +1,3 @@
--- ~/.hammerspoon/init.lua
-
-local VimMode = hs.loadSpoon('VimMode')
-local vim = VimMode:new()
-
 hs.loadSpoon("SpoonInstall")
 
 spoon.SpoonInstall.repos.ShiftIt = {
@@ -26,6 +21,9 @@ spoon.ShiftIt:bindHotkeys({
   resizeOut = {{ 'alt', 'cmd' }, '=' },
   resizeIn = {{ 'alt', 'cmd' }, '-' }
 });
+
+local VimMode = hs.loadSpoon('VimMode')
+local vim = VimMode:new()
 
 vim
   :disableForApp('Code')
