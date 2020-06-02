@@ -17,6 +17,11 @@ Plug 'junegunn/seoul256.vim'
 " Indent text object
 Plug 'michaeljsmith/vim-indent-object'
 
+" Fold anything
+Plug 'pseewald/vim-anyfold'
+" Fold/unfold with backspace/CR
+Plug 'arecarn/vim-fold-cycle'
+
 " FZF / Ctrlp for file navigation
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,22 +30,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 
 "-------------------=== Code completion ===-----------------------
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release' }
-
-"-------------------=== Python ===--------------------------------"
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile', 'for': 'python'}
-
-"-------------------=== Java ===--------------------------------"
-Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile', 'for': 'java'}
-
-"-------------------=== Rust ===---------------------------
-Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile', 'for': 'rust'}
-
-"-------------------=== Git ===--------------------------------"
-Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
-
-"-------------------=== Yaml ===--------------------------------"
-Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 "---------------------=== AWS ===---------------------------------
 Plug 'https://github.com/m-kat/aws-vim'
@@ -74,9 +64,6 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
-" ultisnips engine
-Plug 'SirVer/ultisnips'
-"
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
 
@@ -237,6 +224,16 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
+
+" disable anyfold for large files
+let g:LargeFile = 1000000 " file is large if size greater than 1MB
+autocmd BufReadPre,BufRead * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+function LargeFile()
+    augroup anyfold
+        autocmd! " remove AnyFoldActivate
+        autocmd Filetype <filetype> setlocal foldmethod=indent " fall back to indent folding
+    augroup END
+endfunction
 
 " editorconfig
 " don't interfere with fugitive

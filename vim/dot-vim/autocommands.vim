@@ -13,9 +13,6 @@ augroup genconfiggroup
   autocmd InsertEnter * set cul
   autocmd InsertLeave * set nocul
 
-  " Keep all folds open when a file is opened
-  autocmd BufReadPost *
-        \ exe "normal! zR"
 augroup END
 
 " COC.NVIM -------------------------------------------------------------- {{{
@@ -47,10 +44,10 @@ augroup languages
   autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   " Java
-  autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 AnyFoldActivate
 
   " Scala
-  autocmd FileType scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType scala setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 AnyFoldActivate
 
   " JSON
   autocmd FileType json,*.json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2

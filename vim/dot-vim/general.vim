@@ -113,9 +113,12 @@ set hlsearch
 set ignorecase
 set smartcase
 
-"Enable code folding
-set foldenable
-set foldmethod=indent
+" folding (using anyfold)
+" fold comments
+let g:anyfold_fold_comments=1
+
+" Open all folds by default
+set foldlevel=99
 
 ""Hide mouse when typing
 set mousehide
@@ -129,7 +132,7 @@ set guioptions=aAce
 
 " Colors and fonts
 " colorscheme (Seoul-256)
-let g:seoul256_background = 235
+let g:seoul256_background = 236
 let g:seoul256_light_background = 253
 colo seoul256
 
