@@ -1,48 +1,45 @@
-" Autoinstall vim-plug if not installed
+" vim:foldmethod=marker
+" VimPlug ---------------------------------------------------- {{{ "
+" Autoinstall vim-plug if not installed ---------------------- {{{ "
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+" ------------------------------------------------------------ }}} "
 
 call plug#begin('~/.vim/plugged')
 
-"-------------------=== Status Bar ===-----------------------------
+" Status Bar (lightline) ------------------------------------- {{{ "
 Plug 'itchyny/lightline.vim'
+" ------------------------------------------------------------ }}} "
 
-"-------------------=== Theme ===-----------------------------
+" Theme (seoul256) ------------------------------------------- {{{ "
 Plug 'junegunn/seoul256.vim'
+" ------------------------------------------------------------ }}} "
 
-"-------------------=== Basics ===-----------------------------
+" Basics ----------------------------------------------------- {{{ "
 " Indent text object
 Plug 'michaeljsmith/vim-indent-object'
 
+" Folding  --------------------------------------------------- {{{ "
 " Fold anything
 Plug 'pseewald/vim-anyfold'
-" Fold/unfold with backspace/CR
+" Fold/unfold with backspace / enter
 Plug 'arecarn/vim-fold-cycle'
+" ------------------------------------------------------------ }}} "
 
+" File navigation -------------------------------------------- {{{ "
 " FZF / Ctrlp for file navigation
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-"-------------------=== Languages ===----------------------
-Plug 'sheerun/vim-polyglot'
+" Navigation
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" ------------------------------------------------------------ }}} "
 
-"-------------------=== Code completion ===-----------------------
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-"---------------------=== AWS ===---------------------------------
-Plug 'https://github.com/m-kat/aws-vim'
-
-" Vim/tmux/linux
-"-------------------=== Tools (vim, tmux, linux, etc) ===---------
-Plug 'Raimondi/delimitMate'
-
-" Tmux-vim seamless navigation
-Plug 'sunaku/tmux-navigate'
-
-" tpope
+" TPope plugins ---------------------------------------------- {{{ "
 " Comments
 Plug 'tpope/vim-commentary'
 " Pairings
@@ -51,12 +48,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 " 'surroundings' mappings
 Plug 'tpope/vim-surround'
+" repeat
+Plug 'tpope/vim-repeat'
 " Git
 Plug 'tpope/vim-fugitive'
-
-" Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" ------------------------------------------------------------ }}} "
 
 " Bracketed paste mode support
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -64,8 +60,34 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" ------------------------------------------------------------ }}} "
+
+" Languages -------------------------------------------------- {{{ "
+Plug 'sheerun/vim-polyglot'
+" ------------------------------------------------------------ }}} "
+
+" Code Completion -------------------------------------------- {{{ "
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
+" ------------------------------------------------------------ }}} "
+
+" Code Testing ----------------------------------------------- {{{ "
+Plug 'skywind3000/asyncrun.vim'
+Plug 'vim-test/vim-test'
+" ------------------------------------------------------------ }}} "
+
+" Amazon ----------------------------------------------------- {{{ "
+Plug 'https://github.com/m-kat/aws-vim'
+" ------------------------------------------------------------ }}} "
+
+" Tools (vim, tmux, linux, etc) ------------------------------ {{{ "
+Plug 'Raimondi/delimitMate'
+" Tmux-vim seamless navigation
+Plug 'sunaku/tmux-navigate'
+" ------------------------------------------------------------ }}}
+" ------------------------------------------------------------ }}}
 
 call plug#end()
 
@@ -167,6 +189,11 @@ endfunction
 function! LightlineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
+
+" AsyncRun (asyncrun) ---------------------------------------------------- {{{ "
+let g:asyncrun_open = 8      " --> for the height of the quickfix window "
+let g:asyncrun_status = ''   " --> to support integration with vim-airline "
+" ------------------------------------------------------------------------ }}} "
 
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {

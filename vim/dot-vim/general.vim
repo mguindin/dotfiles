@@ -28,8 +28,6 @@ else
     let g:python3_host_skip_check=1
 endif
 
-endif
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
@@ -117,8 +115,8 @@ set smartcase
 " fold comments
 let g:anyfold_fold_comments=1
 
-" Open all folds by default
-set foldlevel=99
+" Close all folds by default
+set foldlevel=0
 
 ""Hide mouse when typing
 set mousehide
