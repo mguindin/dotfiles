@@ -60,6 +60,9 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" Multiple Cursors
+Plug 'terryma/vim-multiple-cursors'
+
 " ------------------------------------------------------------ }}} "
 
 " Languages -------------------------------------------------- {{{ "

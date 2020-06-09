@@ -49,9 +49,9 @@ zsh/other_aliases/*
 fish_history
 fishd.*
 fisher.fish
+fish/dot-config/fish/completions
 fish/dot-config/fish/functions
 fish/dot-config/fish/conf.d
-fish/dot-config/fish/completions/aws.fish
 fish/dot-config/fish/fish_variables
 
 # vim #
