@@ -155,5 +155,11 @@ if command -sq navi
   navi widget fish | source
 end
 
+if command -sq nvim
+  # Set neovim to be MANPAGER https://neovim.io/doc/user/filetype.html#:Man
+  set -x MANPAGER 'nvim +Man!'
+  set MANWIDTH 999
+end
+
 # starship fish prompt
 starship init fish | source
