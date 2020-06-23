@@ -26,6 +26,7 @@ else
   elseif executable("python3")
     let g:python3_host_prog="python3"
     let g:python3_host_skip_check=1
+  endif
 endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
