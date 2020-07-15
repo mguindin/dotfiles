@@ -6,6 +6,9 @@ set hidden
 " Don't show --NORMAL-- or --INSERT--
 set noshowmode
 
+" Don't show error bells
+set noerrorbells
+
 " Display lightline
 set laststatus=2
 
@@ -37,11 +40,13 @@ set smarttab
 
 " Good advice from here:
 " https://begriffs.com/posts/2019-07-19-history-use-vim.html
-" Protect changes between writes. Default values of
-" updatecount (200 keystrokes) and updatetime
-" (4 seconds) are fine
+" Protect changes between writes. Default values of updatecount (200
+" keystrokes) is fine
+set updatetime=50
 set swapfile
 set directory^=~/.vim/swap//
+
+set scrolloff=8
 
 " protect against crash-during-write
 set writebackup
@@ -60,10 +65,12 @@ end
 set undofile
 set undodir^=~/.vim/undo//
 
+" This allows `|` and block cursors to be displayed properly in tmux
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
-"Split windows below the current window.
+" Split windows below the current window.
 set splitbelow
+" Vertical split to the right
 set splitright
 
 "
@@ -82,7 +89,7 @@ let g:is_posix = 1
 
 syntax enable
 
-" Softtabs, 2 spaces
+" Tabs
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
@@ -101,8 +108,8 @@ filetype plugin indent on
 ""Prefer a slightly higher line height
 set linespace=3
 
-"Better line wrapping
-set wrap
+" No line wrapping
+set nowrap
 set textwidth=79
 
 "Highlight searching
@@ -136,7 +143,11 @@ let g:seoul256_light_background = 253
 colo seoul256
 
 "Show relative line numbers
-set nu rnu
+set number relativenumber
+
+
+" Give more space for displaying bottom messages
+set cmdheight=2
 
 if has('gui_running')
   "Using a cool patched font for powerline

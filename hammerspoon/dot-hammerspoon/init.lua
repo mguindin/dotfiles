@@ -39,6 +39,7 @@ vim
 :disableForApp('Joplin')
 :disableForApp('PyCharm')
 :disableForApp('Intellij IDEA')
+:disableForApp('Alfred')
 :shouldDimScreenInNormalMode(true)
 :enterWithSequence('jk')
 :bindHotKeys({ enter = {{'ctrl'}, ';'} })

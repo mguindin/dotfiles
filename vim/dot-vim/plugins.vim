@@ -63,6 +63,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 
+" Undotree
+Plug 'mbbill/undotree'
+
 " ------------------------------------------------------------ }}} "
 
 " Languages -------------------------------------------------- {{{ "
@@ -74,6 +77,9 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Snippets for ultisnips
 Plug 'honza/vim-snippets'
+
+" tmux completion
+Plug 'wellle/tmux-complete.vim'
 " ------------------------------------------------------------ }}} "
 
 " Code Testing ----------------------------------------------- {{{ "
@@ -105,7 +111,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 
-" Code completion
+" Code Completion Settings ------------------------------------{{{ "
+"
+" Searching
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
+
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
 
@@ -206,7 +218,10 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-yaml',
             \ 'coc-yank'
+            \ 'coc-spell-checker'
             \ ]
+
+" ----------------------------------------------------- }}}
 
 " Buffer maps
 nnoremap <leader>X :bdelete<CR>
@@ -245,6 +260,10 @@ let g:lightline = {
       \ },
       \ }
 
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
+
 " FZF
 " Fuzzy file finder
 let g:fzf_action = {
@@ -254,7 +273,7 @@ let g:fzf_action = {
       \ }
 
 " FZF find files
-nnoremap <Leader>f :FZF<cr>
+nnoremap <Leader>ff :FZF<cr>
 
 function! s:buflist()
   redir => ls
@@ -268,7 +287,7 @@ function! s:bufopen(e)
 endfunction
 
 " FZF select buffer
-nnoremap <silent> <Leader><Enter> :call fzf#run({
+nnoremap <silent> <Leader>bb :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
 \   'options': '+m',
@@ -288,3 +307,9 @@ endfunction
 " editorconfig
 " don't interfere with fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
+
+" FuGITive {{{
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gs :G<CR>
+" }}}

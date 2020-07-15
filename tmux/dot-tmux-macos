@@ -1,3 +1,2 @@
-set-option -g default-shell /usr/local/bin/fish
 bind -n M-F11 set -qg status-bg colour233
 bind -n M-F12 set -qg status-bg colour88

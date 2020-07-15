@@ -106,3 +106,4 @@ cnoremap s!! mksession! $HOME/.vim/sessions/session<CR>
 " Run current line as command
 nnoremap <leader>e :exe getline(line('.'))<cr>
 
+nnoremap <leader>u :UndotreeShow<CR>

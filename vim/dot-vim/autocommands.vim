@@ -25,10 +25,17 @@ augroup lastedit
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd CursorHoldI,CursorMovedI * silent! call CocActionAsync('showSignatureHelp')
 augroup END
-" ------------------------------------------------------------------------ }}}
+" ---------  --------------------------------------------------------------- }}}
+" TrimWhitespace function
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
 
 " Language Configuration ------------------------------------------------ {{{
 augroup languages
+  autocmd BufWritePre * :call TrimWhitespace()
   autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md %s/\s\+$//e
 
   " Run linter on write
