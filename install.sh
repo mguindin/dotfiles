@@ -73,6 +73,13 @@ case "${unameOut}" in
       echo "Show status bar in Finder"
       defaults write com.apple.finder ShowStatusBar -bool true #Show status Bar
 
+      echo "Don't automatically rearrange Spaces based on most rrecent user"
+      defaults write com.apple.dock mru-spaces -bool false
+
+      echo "Speed up key repeat in macOS"
+      defaults write NSGlobalDomain InitialKeyRepeat -int 10
+      defaults write NSGlobalDomain KeyRepeat -int 1
+
       echo "Installing macOS SDK Headers (necessary for building certain tools)"
       sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.15.pkg -target /
       ;;
